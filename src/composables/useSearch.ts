@@ -1,5 +1,5 @@
 import MiniSearch from 'minisearch'
-import { activities, divineNamesByLocale, events, manualPages, quranByLocale, quotesByLocale, videos, weeklyEntries } from '../lib/content'
+import { activities, divineNamesByLocale, glossaryEntries, events, manualPages, quranByLocale, quotesByLocale, videos, weeklyEntries } from '../lib/content'
 import type { LocaleCode, SearchDocument } from '../lib/types'
 
 let documents: SearchDocument[] | null = null
@@ -95,6 +95,17 @@ function buildDocuments(): SearchDocument[] {
       meta: locale
     }))
   }
+
+  for (const entry of glossaryEntries) {
+  docs.push({
+    id: `glossary-${entry.locale}-${entry.id}`,
+    title: entry.term,
+    body: entry.description,
+    type: 'Glossary',
+    route: '/glossary',
+    meta: entry.locale
+  })
+}
 
   return docs
 }
