@@ -29,6 +29,18 @@ export interface DivineNamesCollection {
   names: DivineName[]
 }
 
+export type GlossaryCategory = 'asma' | 'desc' | 'general'
+
+export interface GlossaryEntry {
+  id: string
+  locale: LocaleCode
+  category: GlossaryCategory
+  sort: string
+  term: string
+  description: string
+}
+
+
 export interface QuranVerse {
   id: string
   text: string
