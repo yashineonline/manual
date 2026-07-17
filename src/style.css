@@ -366,7 +366,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 0 17px;
   color: var(--ink);
   background: color-mix(in srgb, var(--ink) 4%, transparent);
-    );
   outline: none;
   font: inherit;
   transition:
