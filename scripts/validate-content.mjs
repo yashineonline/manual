@@ -1,0 +1,79 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import process from 'node:process'
+import { load as loadYaml } from 'js-yaml'
+
+const root = process.cwd()
+const errors = []
+
+const pagesDir = path.join(root, 'content/en/manual/pages')
+const pages = fs.readdirSync(pagesDir).filter((name) => /^\d{3}\.txt$/.test(name)).sort()
+if (pages.length !== 85) errors.push(`Expected 85 English manual page files; found ${pages.length}.`)
+for (const page of pages) {
+  const text = fs.readFileSync(path.join(pagesDir, page), 'utf8').trim()
+  if (!text) errors.push(`Manual page ${page} is empty.`)
+}
+
+
+const namesFile = path.join(root, 'content/en/names/names.yml')
+if (!fs.existsSync(namesFile)) {
+  errors.push('Missing content/en/names/names.yml.')
+} else {
+  const parsed = loadYaml(fs.readFileSync(namesFile, 'utf8'))
+  const names = Array.isArray(parsed?.names) ? parsed.names : []
+  if (names.length !== 99) errors.push(`Expected 99 divine names; found ${names.length}.`)
+  const numbers = new Set()
+  for (const entry of names) {
+    const number = Number(entry?.number)
+    if (!Number.isInteger(number) || number < 1 || number > 99) errors.push(`Invalid divine-name number: ${entry?.number}.`)
+    if (numbers.has(number)) errors.push(`Duplicate divine-name number: ${number}.`)
+    numbers.add(number)
+    if (!String(entry?.arabic || '').trim()) errors.push(`Divine name ${number} has no Arabic text.`)
+    if (!String(entry?.transliteration || '').trim()) errors.push(`Divine name ${number} has no transliteration.`)
+    if (!String(entry?.meaning || '').trim()) errors.push(`Divine name ${number} has no meaning.`)
+  }
+}
+
+for (const locale of ['en', 'fr', 'de', 'es']) {
+  const quranDir = path.join(root, `content/${locale}/quran`)
+  if (!fs.existsSync(quranDir)) continue
+  for (const file of fs.readdirSync(quranDir).filter((name) => name.endsWith('.yml') || name.endsWith('.yaml'))) {
+    const raw = fs.readFileSync(path.join(quranDir, file), 'utf8')
+    const data = loadYaml(raw)
+    if (!Array.isArray(data)) continue
+    for (const entry of data) {
+      if (!entry || entry.featured === false) continue
+      const text = String(entry.text || '').trim()
+      if (!text) errors.push(`${locale}/${file}: featured Quran entry ${entry.id || '(no id)'} has no text.`)
+      const sentenceEnds = (text.match(/[.!?]+(?=\s|$)/g) || []).length
+      if (sentenceEnds > 1) {
+        errors.push(`${locale}/${file}: ${entry.id || '(no id)'} contains more than one sentence-ending mark.`)
+      }
+    }
+  }
+
+  const videoDir = path.join(root, `content/${locale}/videos`)
+  if (!fs.existsSync(videoDir)) continue
+  for (const file of fs.readdirSync(videoDir).filter((name) => name.endsWith('.txt'))) {
+    const lines = fs.readFileSync(path.join(videoDir, file), 'utf8').split(/\r?\n/)
+    lines.forEach((line, index) => {
+      const value = line.trim()
+      if (!value || value.startsWith('#')) return
+      const parts = value.split('|')
+      if (parts.length < 2) {
+        errors.push(`${locale}/${file}:${index + 1}: expected Name | URL.`)
+        return
+      }
+      const url = parts.slice(1).join('|').trim()
+      if (!/youtu(?:\.be|be\.com)/i.test(url)) errors.push(`${locale}/${file}:${index + 1}: URL is not a YouTube link.`)
+      if (!/[?&](?:start|t)=/i.test(url)) errors.push(`${locale}/${file}:${index + 1}: YouTube link has no start time.`)
+      if (!/[?&]end=/i.test(url)) errors.push(`${locale}/${file}:${index + 1}: YouTube link has no end time.`)
+    })
+  }
+}
+
+if (errors.length) {
+  console.error(errors.map((error) => `- ${error}`).join('\n'))
+  process.exit(1)
+}
+console.log(`Validated ${pages.length} manual pages, 99 divine names, and editable content files.`)

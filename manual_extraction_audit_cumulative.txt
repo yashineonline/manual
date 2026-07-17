@@ -1,0 +1,58 @@
+AQRT Manual — Cumulative Text Extraction Audit
+Source: 2010.04.Murid-Manual-3.1 (1).pdf
+Scope: text only; images intentionally excluded.
+Policy: preserve the source wording and spelling; correct extraction, ordering, and broken-glyph errors only.
+
+PAGES 1–10
+- Page 1: Restored the missing “Murid's Manual” title and corrected the reading order of the publisher/contact columns.
+- Page 2: Reordered the two-column contents list into a readable linear order.
+- Page 6: Restored “The History of the Qadiri Rifa’i Order,” joined the split “11th century,” and replaced broken private-font bullets with standard bullets.
+- Page 7: Restored “A Biography of Abdul Qadir Geylani” and joined the incorrectly split “Es-Shaykh.”
+- Pages 3–5 and 8–10: No extraction correction required.
+
+PAGES 11–20
+- Page 11: Replaced four broken private-font bullet glyphs with standard bullet symbols.
+- Page 13: Restored the missing heading “A Biography of Ahmed Er Rifa’i.”
+- Pages 16–17: Reconstructed the two-column Salat “Outer” and “Inner” lists into logical reading order.
+- Pages 12, 14, 15, and 18–20: No extraction correction required.
+- Source issue preserved: page 15 ends visibly with “alam-i-ma”; no completion was invented.
+
+PAGES 21–30
+- Page 23: Reconstructed the two-column “Twelve Names of Allah” list into sequential order, 1–12.
+- Pages 21–22 and 24–30: No extraction correction required.
+- Source issue preserved: printed pagination jumps from 21 to 23.
+
+PAGES 31–40
+- No text extraction corrections required.
+- Source/layout notes preserved: pages 31–36 contain parallel transliteration/instruction and English columns; crossed-out text on pages 33–34 remains as text because plain TXT does not encode strike-through; printed page number 38 appears twice.
+
+PAGES 41–50
+- Page 45: Replaced a broken private-font glyph with the visible em dash in “protection — protection.”
+- Pages 41–44 and 46–50: No extraction correction required.
+- Source forms preserved exactly: “H¨seynül” on page 47 and “Kåap” on page 48.
+
+PAGES 51–60
+- No extraction corrections required. Text, headings, numbered lists, and bullet lists matched the rendered PDF pages.
+
+PAGES 61–70
+- Page 64: Rejoined the numerical value “72” to item 21 (“Al-Basit, the Reliever, Expander; Ya Basit”), which had been split onto a separate line during extraction.
+- Pages 61–63 and 65–70: No extraction correction required.
+- Source forms preserved exactly: “Al-Mutakabbir. the Greatest” on page 62, “Generous;Ya Karim” on page 67, and “Al-Mubdi ... Ya Muhdi” on page 69.
+- Arabic calligraphic name forms are images in the PDF and remain intentionally excluded under the text-only scope.
+
+PAGES 71–80
+- No text extraction corrections required. The English labels, numerical values, glossary headings, and glossary entries matched the rendered PDF pages.
+- Page 75: The glossary alphabet navigation is represented with spaces between letters in the app text; no letters are missing and the sequence matches the PDF.
+- Source forms preserved exactly, including “Repentence” on page 72, “appellatin” and “humilation” on page 76, “Estreme” on page 80, and other apparent source-language or typographical irregularities.
+- Arabic calligraphic forms on pages 71–75 are images and remain intentionally excluded under the text-only scope.
+
+PAGES 81–85
+- Page 83: Reordered the page to match the rendered PDF: the 15-question “Please answer the following questions” box now appears before “Tithing to the Tariqat.”
+- Page 85: Replaced three broken extraction glyphs (“¦”) with the Turkish dotless letter “ı” in the pronunciation guide.
+- Pages 81, 82, and 84: No extraction correction required.
+- Source wording and apparent typographical irregularities were preserved without editorial correction.
+
+AUDIT COMPLETE
+- All 85 PDF pages have now been checked against the PDF text layer and rendered page images.
+- Images were intentionally excluded from the app content, as requested.
+- Corrections were limited to missing text, reading order, line joining, and broken extraction glyphs; source wording and spelling were otherwise preserved.

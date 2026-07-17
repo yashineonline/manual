@@ -1,0 +1,1288 @@
+AQRT Manual — Typographical and English Corrections Applied
+
+This report records all 181 clear typographical, encoding, spacing, punctuation, and elementary English corrections applied to the AQRT Manual app text.
+Each item includes the manual page/section, repository file, post-fix line number, and an exact anchor phrase. Items 1–30 were applied during the first copyedit pass; items 31–181 were applied during the final comprehensive pass.
+
+1. Page 2 · Contents
+   File: content/en/manual/pages/002.txt
+   Post-fix line: 11
+   Anchor: Maqam entry
+   Before: Maqam (Spiritual Statiton) of Arifs (Gostic) 21
+   After:  Maqam (Spiritual Station) of Arifs (Gnostic) 21
+
+2. Table of contents data
+   File: content/en/manual/toc.yml
+   Post-fix line: 34
+   Anchor: Maqam entry
+   Before: title: "Maqam (Spiritual Statiton) of Arifs (Gostic)"
+   After:  title: "Maqam (Spiritual Station) of Arifs (Gnostic)"
+
+3. Page 2 · Contents
+   File: content/en/manual/pages/002.txt
+   Post-fix line: 9
+   Anchor: 32 Fardz entry
+   Before: 32 Fardz (obligations of a Muslim 15
+   After:  32 Fardz (obligations) of a Muslim 15
+
+4. Table of contents data
+   File: content/en/manual/toc.yml
+   Post-fix line: 26
+   Anchor: 32 Fardz entry
+   Before: title: "32 Fardz (obligations of a Muslim"
+   After:  title: "32 Fardz (obligations) of a Muslim"
+
+5. Page 2 · Statement From Shaykh Taner
+   File: content/en/manual/pages/002.txt
+   Post-fix line: 36
+   Anchor: “protect its’ unity and love”
+   Before: protect its’ unity
+   After:  protect its unity
+
+6. Page 2 · Statement From Shaykh Taner
+   File: content/en/manual/pages/002.txt
+   Post-fix line: 52
+   Anchor: “What make us a whole are our differences”
+   Before: What make us a whole
+   After:  What makes us a whole
+
+7. Page 3 · Sufism An Introduction
+   File: content/en/manual/pages/003.txt
+   Post-fix line: 14
+   Anchor: “recognize his reality, and visa versa”
+   Before: visa versa
+   After:  vice versa
+
+8. Page 4 · Sufism An Introduction
+   File: content/en/manual/pages/004.txt
+   Post-fix line: 48
+   Anchor: “They have endure many sufferings”
+   Before: They have endure many sufferings
+   After:  They have endured many sufferings
+
+9. Page 8 · A Biography of Abdul Qadir Geylani
+   File: content/en/manual/pages/008.txt
+   Post-fix line: 20
+   Anchor: “In Baghada, he studied”
+   Before: In Baghada,
+   After:  In Baghdad,
+
+10. Page 6 · The History of the Qadiri Rifa’i Order
+   File: content/en/manual/pages/006.txt
+   Post-fix line: 32
+   Anchor: “a descendent of both Abdul Qadir”
+   Before: a descendent of both
+   After:  a descendant of both
+
+11. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 16
+   Anchor: Seyyid definition
+   Before: Seyyid: A descendent of Prophet
+   After:  Seyyid: A descendant of Prophet
+
+12. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 23
+   Anchor: “Section of the Murid Manaul”
+   Before: Murid Manaul
+   After:  Murid Manual
+
+13. Page 32 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/032.txt
+   Post-fix line: 8
+   Anchor: Instruction 4
+   Before: Everyone sits sown Shaykh says:
+   After:  Everyone sits down. Shaykh says:
+
+14. Page 35 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/035.txt
+   Post-fix line: 7
+   Anchor: Du’a opening
+   Before: for you’re your blessings
+   After:  for your blessings
+
+15. Page 44 · Congregational Salat
+   File: content/en/manual/pages/044.txt
+   Post-fix line: 19
+   Anchor: Ayat ul-Kursi translation
+   Before: Subliime
+   After:  Sublime
+
+16. Page 47 · Silsillah of Qadiri Rifa’i Tariqa
+   File: content/en/manual/pages/047.txt
+   Post-fix line: 27
+   Anchor: “Serafettinül H¨seynül Bagdadi Ensari”
+   Before: H¨seynül
+   After:  Hüseynül
+
+17. Page 48 · Silsillah of Qadiri Rifa’i Tariqa
+   File: content/en/manual/pages/048.txt
+   Post-fix line: 26
+   Anchor: Genealogy entry “Ibni Kåap”
+   Before: Ibni Kåap
+   After:  Ibni Ka'b
+
+18. Page 62 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/062.txt
+   Post-fix line: 5
+   Anchor: Name 10
+   Before: Al-Mutakabbir. the Greatest
+   After:  Al-Mutakabbir, the Greatest
+
+19. Page 67 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/067.txt
+   Post-fix line: 3
+   Anchor: Name 42
+   Before: the Generous;Ya Karim
+   After:  the Generous; Ya Karim
+
+20. Page 69 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/069.txt
+   Post-fix line: 4
+   Anchor: Name 58
+   Before: Al-Mubdi, the Originator; Ya Muhdi
+   After:  Al-Mubdi, the Originator; Ya Mubdi
+
+21. Page 72 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/072.txt
+   Post-fix line: 6
+   Anchor: Name 80
+   Before: Repentence
+   After:  Repentance
+
+22. Page 76 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/076.txt
+   Post-fix line: 24
+   Anchor: Beloved definition
+   Before: appellatin
+   After:  appellation
+
+23. Page 76 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/076.txt
+   Post-fix line: 32
+   Anchor: CARCAN definition
+   Before: humilation
+   After:  humiliation
+
+24. Page 80 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/080.txt
+   Post-fix line: 25
+   Anchor: Rafiq definition
+   Before: Estreme softness
+   After:  Extreme softness
+
+25. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 19
+   Anchor: Shaykh definition
+   Before: order of dervishs
+   After:  order of dervishes
+
+26. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 31
+   Anchor: Sohbet definition
+   Before: talk giving by a Shaykh
+   After:  talk given by a Shaykh
+
+27. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 37
+   Anchor: Sukr definition
+   Before: often accompanininy wajd or fana
+   After:  often accompanying wajd or fana
+
+28. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 54
+   Anchor: Tajalli definition
+   Before: state of irridation
+   After:  state of irradiation
+
+29. Page 82 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/082.txt
+   Post-fix line: 19
+   Anchor: Verd definition
+   Before: Verd: A set prayers
+   After:  Verd: A set of prayers
+
+30. Page 84 · Suggested Readings
+   File: content/en/manual/pages/084.txt
+   Post-fix line: 7
+   Anchor: Grand Masters of Sufism entry
+   Before: SECRETOF SECRETS
+   After:  SECRET OF SECRETS
+
+FINAL COMPREHENSIVE COPYEDIT PASS
+
+31. Page 10 · A Biography of Abdul Qadir Geylani
+   File: content/en/manual/pages/010.txt
+   Post-fix line: 16
+   Anchor: Christian and Muslim discussion
+   Before: How are you gong to prove
+   After:  How are you going to prove
+
+32. Page 10 · A Biography of Abdul Qadir Geylani
+   File: content/en/manual/pages/010.txt
+   Post-fix line: 32
+   Anchor: Ramadan dinners account
+   Before: The door opened, and Abdul Qadur entered
+   After:  The door opened, and Abdul Qadir entered
+
+33. Page 11 · A Biography of Abdul Qadir Geylani
+   File: content/en/manual/pages/011.txt
+   Post-fix line: 3
+   Anchor: Muhyiddini Arabi sentence
+   Before: “Muhyiddini Arabi”.
+   After:  “Muhyiddini Arabi.”
+
+34. Page 11 · A Biography of Abdul Qadir Geylani
+   File: content/en/manual/pages/011.txt
+   Post-fix line: 30
+   Anchor: presence of Abdul Qadir
+   Before: Abdul Qadir ’s presence
+   After:  Abdul Qadir’s presence
+
+35. Page 12 · Moments from Hz. Abdul Qadir’s Life
+   File: content/en/manual/pages/012.txt
+   Post-fix line: 13
+   Anchor: Yahya bin Edip account
+   Before: One-day Yahya bin Edip
+   After:  One day Yahya bin Edip
+
+36. Page 13 · Moments from Hz. Abdul Qadir’s Life
+   File: content/en/manual/pages/013.txt
+   Post-fix line: 8
+   Anchor: Al Khidr quotation
+   Before: Whoever asks his help
+   After:  Whoever asks for his help
+
+37. Page 14 · A Biography of Ahmed Er Rifa’i
+   File: content/en/manual/pages/014.txt
+   Post-fix line: 9
+   Anchor: Medina tomb entrance
+   Before: would not allow him in; as he wanted
+   After:  would not allow him in, as he wanted
+
+38. Page 14 · A Biography of Ahmed Er Rifa’i
+   File: content/en/manual/pages/014.txt
+   Post-fix line: 20
+   Anchor: question about love
+   Before: (who was Ahmed er Rifa’i’s cousin) “Ya Hazret,
+   After:  (who was Ahmed er Rifa’i’s cousin), “Ya Hazret,
+
+39. Page 14 · A Biography of Ahmed Er Rifa’i
+   File: content/en/manual/pages/014.txt
+   Post-fix line: 31
+   Anchor: visiting Hz. Geylani’s tomb
+   Before: would not be welcome by Allah
+   After:  would not be welcomed by Allah
+
+40. Page 14 · A Biography of Ahmed Er Rifa’i
+   File: content/en/manual/pages/014.txt
+   Post-fix line: 44
+   Anchor: cat on the robe account
+   Before: robe, he said “Do not worry
+   After:  robe, he said, “Do not worry
+
+41. Page 15 · A Biography of Ahmed Er Rifa’i
+   File: content/en/manual/pages/015.txt
+   Post-fix line: 8
+   Anchor: lowering one’s gaze parenthesis
+   Before: to just look in front of you).
+   After:  to just look in front of you.)
+
+42. Page 15 · 32 Fardz (obligations) of a Muslim
+   File: content/en/manual/pages/015.txt
+   Post-fix line: 31
+   Anchor: angels paragraph
+   Before: His arch angels are;
+   After:  His archangels are:
+
+43. Page 15 · 32 Fardz (obligations) of a Muslim
+   File: content/en/manual/pages/015.txt
+   Post-fix line: 44
+   Anchor: natural disasters sentence
+   Before: come directly from Allah directly.
+   After:  come directly from Allah.
+
+44. Page 16 · 32 Fardz (obligations) of a Muslim
+   File: content/en/manual/pages/016.txt
+   Post-fix line: 3
+   Anchor: Shahada quotation
+   Before: Muhammedin abduhu wa Rassulullah. (I witness
+   After:  Muhammedin abduhu wa Rassulullah.” (I witness
+
+45. Page 16 · 32 Fardz (obligations) of a Muslim
+   File: content/en/manual/pages/016.txt
+   Post-fix line: 16
+   Anchor: wudu instruction 3
+   Before: wet hands1/4
+   After:  wet hands 1/4
+
+46. Page 18 · Levels of Nafs
+   File: content/en/manual/pages/018.txt
+   Post-fix line: 36
+   Anchor: Nafs-i-Lawama planet entry
+   Before: Planet: is Utarid (mercury the essence of Utarid exists in the qalb (heart)
+   After:  Planet: Utarid (Mercury; the essence of Utarid exists in the qalb [heart])
+
+47. Page 19 · Levels of Nafs
+   File: content/en/manual/pages/019.txt
+   Post-fix line: 17
+   Anchor: Nafs-i-Mulhama color note
+   Before: (if you don’t see colors don’t panic)
+   After:  (if you don’t see colors, don’t panic))
+
+48. Page 20 · Levels of Nafs
+   File: content/en/manual/pages/020.txt
+   Post-fix line: 48
+   Anchor: Quran 89:29–30 translation
+   Before: Enter though My Garden!
+   After:  Enter thou My Garden!
+
+49. Page 20 · Levels of Nafs
+   File: content/en/manual/pages/020.txt
+   Post-fix line: 52
+   Anchor: Nafs-i-Mardhiyeh dreams paragraph
+   Before: the light of aql (intellect) In this level
+   After:  the light of aql (intellect). In this level
+
+50. Page 21 · Levels of Nafs
+   File: content/en/manual/pages/021.txt
+   Post-fix line: 8
+   Anchor: Nafs-i-Safiye characteristics
+   Before: It’s characteristic is
+   After:  Its characteristic is
+
+51. Page 21 · Maqam (Spiritual Station) of Arifs
+   File: content/en/manual/pages/021.txt
+   Post-fix line: 29
+   Anchor: Haqq al Yaqin definition
+   Before: being given to Muhammed (pbuh) In order
+   After:  being given to Muhammed (pbuh)) In order
+
+52. Page 21 · Maqam (Spiritual Station) of Arifs
+   File: content/en/manual/pages/021.txt
+   Post-fix line: 35
+   Anchor: Murid degree definition
+   Before: through Shaykh))
+   After:  through Shaykh)
+
+53. Page 22 · Maqam (Spiritual Station) of Arifs
+   File: content/en/manual/pages/022.txt
+   Post-fix line: 4
+   Anchor: Sufi degree definition
+   Before: Sufism)- is like water
+   After:  Sufism) – is like water
+
+54. Page 22 · Maqam (Spiritual Station) of Arifs
+   File: content/en/manual/pages/022.txt
+   Post-fix line: 30
+   Anchor: Seyri Maallah paragraph
+   Before: Allah is withyou
+   After:  Allah is with you
+
+55. Page 23 · Ilm (Knowledge)
+   File: content/en/manual/pages/023.txt
+   Post-fix line: 15
+   Anchor: Ilm opening sentence
+   Before: divided into to two
+   After:  divided into two
+
+56. Page 23 · Ilm (Knowledge)
+   File: content/en/manual/pages/023.txt
+   Post-fix line: 15
+   Anchor: Ilm opening punctuation
+   Before: Batini (inner) The second
+   After:  Batini (inner). The second
+
+57. Page 23 · Ilm (Knowledge)
+   File: content/en/manual/pages/023.txt
+   Post-fix line: 18
+   Anchor: Batini divisions
+   Before: The second ones four divisions
+   After:  The second one’s four divisions
+
+58. Page 24 · The Crown of Prophet Muhammed
+   File: content/en/manual/pages/024.txt
+   Post-fix line: 35
+   Anchor: Post heading
+   Before: –everyone should have a skin
+   After:  – everyone should have a skin
+
+59. Page 25 · The Crown of Prophet Muhammed
+   File: content/en/manual/pages/025.txt
+   Post-fix line: 1
+   Anchor: right front leg angel
+   Before: Adbdullah Samad
+   After:  Abdullah Samad
+
+60. Page 25 · Understanding Personal and Group Zikr
+   File: content/en/manual/pages/025.txt
+   Post-fix line: 46
+   Anchor: silent zikr paragraph
+   Before: Naqshi’s from Abu Bakr
+   After:  Naqshis from Abu Bakr
+
+61. Page 26 · On the Necessity of Zikr
+   File: content/en/manual/pages/026.txt
+   Post-fix line: 26
+   Anchor: Hadith Qudsi closing quotation
+   Before: at (great) speed. (Sources:
+   After:  at (great) speed.’” (Sources:
+
+62. Page 26 · Transform Nafs Through Zikr
+   File: content/en/manual/pages/026.txt
+   Post-fix line: 37
+   Anchor: reported speech capitalization
+   Before: easily follow,” The Prophet
+   After:  easily follow,” the Prophet
+
+63. Page 27 · Getting Ready for Group Zikr
+   File: content/en/manual/pages/027.txt
+   Post-fix line: 27
+   Anchor: Quran quotation closing
+   Before: torment of fire. ”
+   After:  torment of fire.’”
+
+64. Page 27 · Getting Ready for Group Zikr
+   File: content/en/manual/pages/027.txt
+   Post-fix line: 36
+   Anchor: Estaughfirullah translation parenthesis
+   Before: everything but You. In the beginning
+   After:  everything but You.) In the beginning
+
+65. Page 27 · Getting Ready for Group Zikr
+   File: content/en/manual/pages/027.txt
+   Post-fix line: 44
+   Anchor: guide sentence
+   Before: guide in Muhammed, (a.s.)
+   After:  guide in Muhammed (a.s.)
+
+66. Page 28 · The Body of Group Zikr
+   File: content/en/manual/pages/028.txt
+   Post-fix line: 21
+   Anchor: Allah, Allah movement explanation
+   Before: Doesn’t mean that Allah
+   After:  This doesn’t mean that Allah
+
+67. Page 28 · The Body of Group Zikr
+   File: content/en/manual/pages/028.txt
+   Post-fix line: 38
+   Anchor: Allah Hayy, Ya Qayyum translation
+   Before: THE SELF EXISTING ONE
+   After:  THE SELF-EXISTING ONE
+
+68. Page 29 · Songs, Turning, and Prayers
+   File: content/en/manual/pages/029.txt
+   Post-fix line: 33
+   Anchor: last suras paragraph
+   Before: all-religious ceremonies
+   After:  all religious ceremonies
+
+69. Page 31 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/031.txt
+   Post-fix line: 2
+   Anchor: instruction 1 opening
+   Before: facing congregation The Selati
+   After:  facing congregation. The Selati
+
+70. Page 31 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/031.txt
+   Post-fix line: 29
+   Anchor: permission line
+   Before: Meyhdan, al Fatiha
+   After:  Meydan, al Fatiha
+
+71. Page 31 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/031.txt
+   Post-fix line: 56
+   Anchor: English translation line
+   Before: creation to, Muhammed Mustafa
+   After:  creation to Muhammed Mustafa
+
+72. Page 31 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/031.txt
+   Post-fix line: 62
+   Anchor: instruction 2 English column
+   Before: Everyone face mihrab (mecca)
+   After:  Everyone faces the mihrab (Mecca)
+
+73. Page 32 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/032.txt
+   Post-fix line: 9
+   Anchor: instruction 4
+   Before: Bismiallah’ir Rahman’ir Rahim.
+   After:  Bismillah’ir Rahman’ir Rahim.
+
+74. Page 33 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/033.txt
+   Post-fix line: 44
+   Anchor: instruction 18
+   Before: Allah Hu, Hu Allah)
+   After:  Allah Hu, Hu Allah
+
+75. Page 33 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/033.txt
+   Post-fix line: 47
+   Anchor: instruction 11
+   Before: Opening statement groups says hu
+   After:  Opening statement: group says Hu
+
+76. Page 33 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/033.txt
+   Post-fix line: 67
+   Anchor: movement instruction
+   Before: left (a illa) , back center
+   After:  left (a illa), back center
+
+77. Page 34 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/034.txt
+   Post-fix line: 15
+   Anchor: instruction 25
+   Before: ecstacy
+   After:  ecstasy
+
+78. Page 34 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/034.txt
+   Post-fix line: 55
+   Anchor: instruction 26
+   Before: counter clockwise
+   After:  counterclockwise
+
+79. Page 35 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/035.txt
+   Post-fix line: 3
+   Anchor: new du’a instruction
+   Before: The Shayhk finishes
+   After:  The Shaykh finishes
+
+80. Page 35 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/035.txt
+   Post-fix line: 4
+   Anchor: new du’a instruction
+   Before: repetions
+   After:  repetitions
+
+81. Page 35 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/035.txt
+   Post-fix line: 19
+   Anchor: du’a text
+   Before: to Islam, surrender Keep
+   After:  to Islam, surrender. Keep
+
+82. Page 35 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/035.txt
+   Post-fix line: 47
+   Anchor: instruction 29
+   Before: rabbil alamin. al Fatiha
+   After:  rabbil alamin. Al Fatiha
+
+83. Page 36 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/036.txt
+   Post-fix line: 21
+   Anchor: closing thanks
+   Before: Thank you qutub of this time
+   After:  Thank you, qutub of this time
+
+84. Page 36 · Qadiri Rifa’i Congregational Zikr Script
+   File: content/en/manual/pages/036.txt
+   Post-fix line: 29
+   Anchor: instruction 33
+   Before: Everyone Answers: allahü akbar,
+   After:  Everyone answers: Allahü akbar.
+
+85. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 4
+   Anchor: opening paragraph
+   Before: Allah’s servants He is not ours.
+   After:  Allah’s servants. He is not ours.
+
+86. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 5
+   Anchor: opening paragraph
+   Before: refocus ones attention
+   After:  refocus one’s attention
+
+87. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 7
+   Anchor: Holy Hadiths sentence
+   Before: (sayings that came through the Prophet (a.s.) it says; "I was
+   After:  (sayings that came through the Prophet [a.s.]), it says: “I was
+
+88. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 8
+   Anchor: Holy Hadith quotation
+   Before: so that I might be known."
+   After:  so that I might be known.”
+
+89. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 30
+   Anchor: Quran 17:78–79 quotation
+   Before: Glory! (17:78-79)
+   After:  Glory!” (17:78-79)
+
+90. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 41
+   Anchor: intention example
+   Before: for Allah’s sake”.
+   After:  for Allah’s sake.”
+
+91. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 44
+   Anchor: takbir posture
+   Before: ear lobes
+   After:  earlobes
+
+92. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 45
+   Anchor: takbir posture
+   Before: jaw bone
+   After:  jawbone
+
+93. Page 37 · Understanding Salat
+   File: content/en/manual/pages/037.txt
+   Post-fix line: 45
+   Anchor: takbir posture
+   Before: feet shoulder width apart
+   After:  feet shoulder-width apart
+
+94. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 15
+   Anchor: traditional prayer quotation
+   Before: gheiruk”.
+   After:  gheiruk.”
+
+95. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 18
+   Anchor: full Bismillah transliteration
+   Before: minesh shaytin irrajim
+   After:  minesh shaytan irrajim
+
+96. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 20
+   Anchor: Quran 16:98 quotation
+   Before: Quran says, “ When
+   After:  Quran says, “When
+
+97. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 20
+   Anchor: Quran 16:98 closing quotation
+   Before: the rejected one. (16:98)
+   After:  the rejected one.” (16:98)
+
+98. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 30
+   Anchor: Ikhlas explanation
+   Before: Allah is energy He was not born.
+   After:  Allah is energy. He was not born.
+
+99. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 31
+   Anchor: Ikhlas explanation
+   Before: he or she, It is energy
+   After:  he or she. It is energy
+
+100. Page 38 · Understanding Salat
+   File: content/en/manual/pages/038.txt
+   Post-fix line: 49
+   Anchor: prostration explanation
+   Before: surrendering ones self
+   After:  surrendering oneself
+
+101. Page 39 · Understanding Salat
+   File: content/en/manual/pages/039.txt
+   Post-fix line: 6
+   Anchor: Quran 13:15 quotation
+   Before: mornings and evenings. (13:15)
+   After:  mornings and evenings.” (13:15)
+
+102. Page 39 · Understanding Salat
+   File: content/en/manual/pages/039.txt
+   Post-fix line: 7
+   Anchor: tashahud instruction
+   Before: onto your heals
+   After:  onto your heels
+
+103. Page 39 · Understanding Salat
+   File: content/en/manual/pages/039.txt
+   Post-fix line: 12
+   Anchor: posture explanation
+   Before: formed the word Allah 15.
+   After:  formed the word Allah. 15.
+
+104. Page 39 · Understanding Salat
+   File: content/en/manual/pages/039.txt
+   Post-fix line: 23
+   Anchor: Falaq explanation
+   Before: practice envy”.
+   After:  practice envy.”
+
+105. Page 39 · Understanding Salat
+   File: content/en/manual/pages/039.txt
+   Post-fix line: 30
+   Anchor: closing prayer paragraph
+   Before: prayer from the Qur’an it is
+   After:  prayer from the Qur’an; it is
+
+106. Page 40 · Understanding Salat
+   File: content/en/manual/pages/040.txt
+   Post-fix line: 15
+   Anchor: greeting angels on the right
+   Before: right and greet the angels there by saying;
+   After:  right and greet the angels there by saying:
+
+107. Page 40 · Understanding Salat
+   File: content/en/manual/pages/040.txt
+   Post-fix line: 18
+   Anchor: greeting angels on the left
+   Before: left and greet the angels there by saying;
+   After:  left and greet the angels there by saying:
+
+108. Page 40 · Congregational Salat
+   File: content/en/manual/pages/040.txt
+   Post-fix line: 25
+   Anchor: Iqama instruction
+   Before: Iqama – everyone stand
+   After:  Iqama – everyone stands
+
+109. Page 40 · Congregational Salat
+   File: content/en/manual/pages/040.txt
+   Post-fix line: 26
+   Anchor: Adzan instruction
+   Before: a loud clear voice
+   After:  a loud, clear voice
+
+110. Page 41 · Congregational Salat
+   File: content/en/manual/pages/041.txt
+   Post-fix line: 7
+   Anchor: intention line
+   Before: I intend to pray…..
+   After:  I intend to pray…
+
+111. Page 41 · Congregational Salat
+   File: content/en/manual/pages/041.txt
+   Post-fix line: 25
+   Anchor: Fatiha transliteration
+   Before: Ar-Rahman irRahim.
+   After:  Ar-Rahman ir-Rahim.
+
+112. Page 41 · Congregational Salat
+   File: content/en/manual/pages/041.txt
+   Post-fix line: 28
+   Anchor: Fatiha transliteration
+   Before: Ar-Rahmn ir-Rahim
+   After:  Ar-Rahman ir-Rahim
+
+113. Page 42 · Congregational Salat
+   File: content/en/manual/pages/042.txt
+   Post-fix line: 8
+   Anchor: Qiam response translation
+   Before: listened to he who
+   After:  listened to him who
+
+114. Page 42 · Congregational Salat
+   File: content/en/manual/pages/042.txt
+   Post-fix line: 20
+   Anchor: rakat instruction
+   Before: as necessary At the end
+   After:  as necessary. At the end
+
+115. Page 42 · Congregational Salat
+   File: content/en/manual/pages/042.txt
+   Post-fix line: 21
+   Anchor: Tashahud transition
+   Before: and Say: Allahu Akbar
+   After:  and say: Allahu Akbar
+
+116. Page 42 · Congregational Salat
+   File: content/en/manual/pages/042.txt
+   Post-fix line: 35
+   Anchor: final rakat instruction
+   Before: after the final rakat stay still in Tashahud (kneeling position) the leader says in English:
+   After:  after the final rakat, stay still in Tashahud (kneeling position). The leader says in English:
+
+117. Page 43 · Congregational Salat
+   File: content/en/manual/pages/043.txt
+   Post-fix line: 7
+   Anchor: salawat transliteration
+   Before: Immaka Hamidun Majid
+   After:  Innaka Hamidun Majid
+
+118. Page 43 · Congregational Salat
+   File: content/en/manual/pages/043.txt
+   Post-fix line: 40
+   Anchor: Ayat ul-Kursi heading
+   Before: Everyone says Ayat ul-Kursi (Sura Baqara: 255) Throne Verse; Sura 2:255)
+   After:  Everyone says Ayat ul-Kursi (Sura Baqara: 255; Throne Verse, Sura 2:255)
+
+119. Page 44 · Congregational Salat
+   File: content/en/manual/pages/044.txt
+   Post-fix line: 7
+   Anchor: Ayat ul-Kursi translation
+   Before: Neither slumber no sleep
+   After:  Neither slumber nor sleep
+
+120. Page 44 · Congregational Salat
+   File: content/en/manual/pages/044.txt
+   Post-fix line: 21
+   Anchor: Subhanallah count
+   Before: 33times
+   After:  33 times
+
+121. Page 44 · Congregational Salat
+   File: content/en/manual/pages/044.txt
+   Post-fix line: 32
+   Anchor: Fatiha introduction
+   Before: Wa alhamulillah
+   After:  Wa alhamdulillah
+
+122. Page 44 · Congregational Salat
+   File: content/en/manual/pages/044.txt
+   Post-fix line: 40
+   Anchor: Fatiha transliteration
+   Before: Ar-Rahmn ir-Rahim
+   After:  Ar-Rahman ir-Rahim
+
+123. Page 45 · Adab of Du’a
+   File: content/en/manual/pages/045.txt
+   Post-fix line: 13
+   Anchor: opening paragraph
+   Before: requests of Allah You hold
+   After:  requests of Allah. You hold
+
+124. Page 45 · Adab of Du’a
+   File: content/en/manual/pages/045.txt
+   Post-fix line: 28
+   Anchor: du’a category 5
+   Before: After asking of blessings
+   After:  After asking for blessings
+
+125. Page 50 · Silsillah of Qadiri Rifa’i Tariqa
+   File: content/en/manual/pages/050.txt
+   Post-fix line: 10
+   Anchor: Rifai silsila entry
+   Before: Seyh Alij Vasiti,
+   After:  Seyh Alij Vasiti
+
+126. Page 50 · Silsillah of Qadiri Rifa’i Tariqa
+   File: content/en/manual/pages/050.txt
+   Post-fix line: 23
+   Anchor: Rifai silsila final entry
+   Before: Peygamber Muhammeda s.a.v.s.
+   After:  Peygamber Muhammed s.a.v.s.
+
+127. Page 51 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/051.txt
+   Post-fix line: 30
+   Anchor: opening adab paragraph
+   Before: in relation with other people
+   After:  in relation to other people
+
+128. Page 51 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/051.txt
+   Post-fix line: 36
+   Anchor: inner and outer adab explanation
+   Before: The outer part that shows what you think and intend are
+   After:  The outer parts that show what you think and intend are
+
+129. Page 51 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/051.txt
+   Post-fix line: 38
+   Anchor: correcting others paragraph
+   Before: remind them there are a few ways
+   After:  remind them, there are a few ways
+
+130. Page 51 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/051.txt
+   Post-fix line: 39
+   Anchor: correcting others example
+   Before: for example; someone’s food
+   After:  for example: someone’s food
+
+131. Page 52 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/052.txt
+   Post-fix line: 5
+   Anchor: listening to other ideas
+   Before: Listen to other ideas they could be handy sometime.
+   After:  Listen to other ideas; they could be handy sometime.
+
+132. Page 52 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/052.txt
+   Post-fix line: 9
+   Anchor: self-correction paragraph
+   Before: Always check, if you see
+   After:  Always check: if you see
+
+133. Page 52 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/052.txt
+   Post-fix line: 17
+   Anchor: intention paragraph
+   Before: consideration of other people
+   After:  consideration for other people
+
+134. Page 53 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/053.txt
+   Post-fix line: 1
+   Anchor: adab with the Shaykh
+   Before: Shaykh sits, before you sit down
+   After:  Shaykh sits before you sit down
+
+135. Page 54 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/054.txt
+   Post-fix line: 38
+   Anchor: table prayers parenthesis
+   Before: the Fatiha.).
+   After:  the Fatiha).
+
+136. Page 55 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/055.txt
+   Post-fix line: 44
+   Anchor: confidential practices paragraph
+   Before: the others’.
+   After:  others’.
+
+137. Page 55 · Adab: Courtesies Practiced on the Path
+   File: content/en/manual/pages/055.txt
+   Post-fix line: 44
+   Anchor: quotation punctuation
+   Before: Discussion of “visions”,
+   After:  Discussion of “visions,”
+
+138. Page 57 · Adab of Being a Guest
+   File: content/en/manual/pages/057.txt
+   Post-fix line: 11
+   Anchor: long-term visit
+   Before: including you into his or her household
+   After:  including you in his or her household
+
+139. Page 57 · Adab of Being a Guest
+   File: content/en/manual/pages/057.txt
+   Post-fix line: 13
+   Anchor: long-term visit
+   Before: meddle into their family matters
+   After:  meddle in their family matters
+
+140. Page 57 · Adab of Eating
+   File: content/en/manual/pages/057.txt
+   Post-fix line: 24
+   Anchor: opening eating paragraph
+   Before: not only good for nourishing the body, but also well for nourishing mind and soul
+   After:  not only good for nourishing the body, but also good for nourishing the mind and soul
+
+141. Page 58 · Adab of the Shaykh
+   File: content/en/manual/pages/058.txt
+   Post-fix line: 16
+   Anchor: adab to own Shaykh
+   Before: at all time
+   After:  at all times
+
+142. Page 58 · Adab of the Shaykh
+   File: content/en/manual/pages/058.txt
+   Post-fix line: 49
+   Anchor: Arabic-speaking people paragraph
+   Before: because they are better than they.
+   After:  because they are better than them.
+
+143. Page 59 · Adab of the Shaykh
+   File: content/en/manual/pages/059.txt
+   Post-fix line: 3
+   Anchor: other Shaykhs’ murids paragraph
+   Before: or see in them as an opportunity
+   After:  or see them as an opportunity
+
+144. Page 59 · Adab of the Shaykh
+   File: content/en/manual/pages/059.txt
+   Post-fix line: 20
+   Anchor: stray extraction character
+   Before: ` One more important issue
+   After:  One more important issue
+
+145. Page 59 · Adab of the Shaykh
+   File: content/en/manual/pages/059.txt
+   Post-fix line: 37
+   Anchor: closing prayer sentence
+   Before: May Allah help all the Shaykhs to be true, may Allah help us
+   After:  May Allah help all the Shaykhs to be true; may Allah help us
+
+146. Page 60 · Adab of the Murshid
+   File: content/en/manual/pages/060.txt
+   Post-fix line: 5
+   Anchor: mature Murshid sentence
+   Before: As you see the Murshid
+   After:  As you see, the Murshid
+
+147. Page 61 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/061.txt
+   Post-fix line: 1
+   Anchor: continuation of opening explanation
+   Before: things is contained within
+   After:  things are contained within
+
+148. Page 64 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/064.txt
+   Post-fix line: 3
+   Anchor: Name 22 punctuation
+   Before: the Abaser, Ya Khafid
+   After:  the Abaser; Ya Khafid
+
+149. Page 72 · Allah’s 99 Beautiful Names
+   File: content/en/manual/pages/072.txt
+   Post-fix line: 7
+   Anchor: Name 81 numerical alternatives
+   Before: Ya Muntaqim 630 680?
+   After:  Ya Muntaqim 630 or 680?
+
+150. Page 75 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/075.txt
+   Post-fix line: 25
+   Anchor: Alim definition
+   Before: minds memory
+   After:  mind’s memory
+
+151. Page 76 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/076.txt
+   Post-fix line: 28
+   Anchor: Bismillah definition
+   Before: Bismillah er Rahman er Raham
+   After:  Bismillah er Rahman er Rahim
+
+152. Page 77 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/077.txt
+   Post-fix line: 5
+   Anchor: Fanaful Rasul definition
+   Before: Fanaful Rasul: Disolving
+   After:  Fanaful Rasul: Dissolving
+
+153. Page 77 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/077.txt
+   Post-fix line: 40
+   Anchor: Halwet definition
+   Before: Halwet: Spiritual retreat; (Turk,)
+   After:  Halwet: Spiritual retreat; (Turk.)
+
+154. Page 78 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/078.txt
+   Post-fix line: 4
+   Anchor: Israfil definition
+   Before: Israfil; The archangel
+   After:  Israfil: The archangel
+
+155. Page 78 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/078.txt
+   Post-fix line: 10
+   Anchor: Jibril definition
+   Before: conveying message and scriptures
+   After:  conveying messages and scriptures
+
+156. Page 78 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/078.txt
+   Post-fix line: 17
+   Anchor: Jismani Ruh definition
+   Before: one of the composite of four human souls
+   After:  one of the four composite human souls
+
+157. Page 78 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/078.txt
+   Post-fix line: 42
+   Anchor: Laqab definition
+   Before: The White Falcom
+   After:  The White Falcon
+
+158. Page 79 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/079.txt
+   Post-fix line: 17
+   Anchor: Most Beautiful Names definition
+   Before: Most Beautiful Names; The attributes
+   After:  Most Beautiful Names: The attributes
+
+159. Page 79 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/079.txt
+   Post-fix line: 42
+   Anchor: Pir-i-Dastgir definition
+   Before: Pir Abdul al Geylani
+   After:  Pir Abdul Qadir al Geylani
+
+160. Page 80 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/080.txt
+   Post-fix line: 4
+   Anchor: Qudsi-Hadith definition
+   Before: Hadiths-i-] Qudsi
+   After:  Hadiths-i- Qudsi
+
+161. Page 80 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/080.txt
+   Post-fix line: 37
+   Anchor: Ruhsat definition
+   Before: or organization function
+   After:  or organizational function
+
+162. Page 80 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/080.txt
+   Post-fix line: 30
+   Anchor: Rifa’i definition
+   Before: (1120-1183 C.E.) A Sufi
+   After:  (1120-1183 C.E.). A Sufi
+
+163. Page 80 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/080.txt
+   Post-fix line: 54
+   Anchor: honorific phrase
+   Before: Salla Allahu ‘ Alayhi
+   After:  Salla Allahu ‘Alayhi
+
+164. Page 80 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/080.txt
+   Post-fix line: 34
+   Anchor: Ruhani Ruh definition
+   Before: one of the composite of four human souls
+   After:  one of the four composite human souls
+
+165. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 14
+   Anchor: Seyrani Ruh definition
+   Before: one of the composite of four human souls
+   After:  one of the four composite human souls
+
+166. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 38
+   Anchor: Sultani Ruh definition
+   Before: one of the composite four human souls
+   After:  one of the four composite human souls
+
+167. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 25
+   Anchor: Silsillah definition
+   Before: Silsillah: Lit,
+   After:  Silsillah: Lit.,
+
+168. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 33
+   Anchor: Sufi definition
+   Before: Sufi: Lit., “wearer of wool,” In
+   After:  Sufi: Lit., “wearer of wool.” In
+
+169. Page 81 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/081.txt
+   Post-fix line: 50
+   Anchor: Taj definition
+   Before: Taj: Lit., “crown,”:
+   After:  Taj: Lit., “crown”:
+
+170. Page 82 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/082.txt
+   Post-fix line: 5
+   Anchor: Tariqat definition
+   Before: Tariqat: Lit,
+   After:  Tariqat: Lit.,
+
+171. Page 82 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/082.txt
+   Post-fix line: 16
+   Anchor: Tesbih definition
+   Before: “glorification,” String
+   After:  “glorification,” string
+
+172. Page 82 · Glossary of Sufi Terminology
+   File: content/en/manual/pages/082.txt
+   Post-fix line: 28
+   Anchor: Wali definition
+   Before: Qadiri Rafa’i
+   After:  Qadiri Rifa’i
+
+173. Page 83 · For New Students
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 2
+   Anchor: opening paragraph
+   Before: Prophet Muhammed, (a.s.)
+   After:  Prophet Muhammed (a.s.)
+
+174. Page 83 · For New Students
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 4
+   Anchor: nafs parenthesis
+   Before: its shirk, etc)
+   After:  its shirk, etc.)
+
+175. Page 83 · For New Students
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 18
+   Anchor: active path paragraph
+   Before: "abra kadabra"
+   After:  "abracadabra"
+
+176. Page 83 · For New Students
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 19
+   Anchor: active path paragraph
+   Before: "enlightened".
+   After:  "enlightened."
+
+177. Page 83 · Tithing to the Tariqat
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 41
+   Anchor: opening sentence
+   Before: all the dervish.
+   After:  all the dervishes.
+
+178. Page 83 · Tithing to the Tariqat
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 43
+   Anchor: donation paragraph
+   Before: tax deductible monthly donation
+   After:  tax-deductible monthly donation
+
+179. Page 83 · Tithing to the Tariqat
+   File: content/en/manual/pages/083.txt
+   Post-fix line: 49
+   Anchor: mailing address
+   Before: P.O. Box 833 Nassau
+   After:  P.O. Box 833, Nassau
+
+180. Page 84 · Suggested Readings
+   File: content/en/manual/pages/084.txt
+   Post-fix line: 16
+   Anchor: Torah subtitle
+   Before: The Five books of Moses
+   After:  The Five Books of Moses
+
+181. Page 85 · Turkish Pronunciation Guide
+   File: content/en/manual/pages/085.txt
+   Post-fix line: 4
+   Anchor: consonant table first row
+   Before: b, d, f, l, as in English, but when pronouncing d, n, and t, the tongue touches m, n, p, t, z the upper teeth.
+   After:  b, d, f, l, m, n, p, t, z as in English, but when pronouncing d, n, and t, the tongue touches the upper teeth.
+
+SOURCE TEXT LEFT UNCHANGED BECAUSE THE INTENDED WORDING IS NOT RECOVERABLE
+
+Page 15 · 32 Fardz (obligations) of a Muslim
+File: content/en/manual/pages/015.txt
+Anchor: “Other angels come from the alam-i-malakut and alam-i-”
+The supplied PDF itself ends the term as “alam-i-ma” and does not reveal the intended completion. It was not guessed or silently expanded.
+
+EDITORIAL SCOPE
+
+All identifiable ordinary-English typos, broken extraction characters, spacing errors, obvious punctuation defects, and clear elementary agreement errors found during the completed 85-page audit and final copyedit were corrected. The report does not silently standardize specialized Sufi/Turkish/Arabic transliterations, personal names, lineage spellings, theological claims, quoted source wording whose intended form is uncertain, or numerical values in the printed 99 Names list. The new interactive 99 Names feature uses a separate editable standard Arabic list and does not replace or rewrite the historical manual pages.
+
+VALIDATION
+
+After correction, all 85 manual page files remained present and nonempty, the 99 Names data contained exactly 99 numbered entries, and the production PWA build passed.

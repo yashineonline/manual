@@ -1,0 +1,43 @@
+AQRT Manual text-extraction audit log
+
+Batch 1 completed: PDF pages 1-10
+
+Method:
+- Compared each app text file against the PDF text layer.
+- Visually checked rendered PDF pages for text omitted from the text layer and for reading-order problems.
+- Preserved original wording, spelling, capitalization, and substantive punctuation.
+
+Corrections made:
+- Page 1: restored the omitted title “Murid's Manual”.
+- Page 1: separated and reordered the two footer columns so publisher and contact details read correctly.
+- Page 2: linearized the two-column contents list into the correct reading order.
+- Page 6: restored the omitted title “The History of the Qadiri Rifa’i Order”.
+- Page 6: joined “11th century”, which had been split because “th” was superscripted in the PDF.
+- Page 6: replaced four private-font bullet glyphs with four standard visible bullet characters.
+- Page 7: restored the omitted title “A Biography of Abdul Qadir Geylani”.
+- Page 7: joined “Es-Shaykh”, which had been split at a PDF line boundary.
+
+Pages checked with no text-content correction required:
+- Pages 3, 4, 5, 8, 9, and 10.
+
+Next batch:
+- PDF pages 11-20.
+
+PAGES 61–70
+- Page 64: Rejoined the numerical value “72” to item 21 (“Al-Basit, the Reliever, Expander; Ya Basit”), which had been split onto a separate line during extraction.
+- Pages 61–63 and 65–70: No extraction correction required.
+- Source forms preserved exactly: “Al-Mutakabbir. the Greatest” on page 62, “Generous;Ya Karim” on page 67, and “Al-Mubdi ... Ya Muhdi” on page 69.
+- Arabic calligraphic name forms are images in the PDF and remain intentionally excluded under the text-only scope.
+
+PAGES 71–80
+- Compared app page files 071.txt–080.txt with the PDF text layer and rendered pages.
+- No extraction, ordering, omission, or broken-glyph corrections were required.
+- Page 75 glossary alphabet navigation retains all letters; spaces in the TXT representation are formatting only.
+- Preserved apparent source typos and unusual wording without correction.
+- Arabic calligraphic forms on pages 71–75 remain excluded because the app scope is text only and the user requested images be ignored.
+
+PAGES 81–85
+- Page 83: Moved the 15-question block before “Tithing to the Tariqat” to match the visual order in the PDF.
+- Page 85: Replaced three broken “¦” extraction glyphs with Turkish dotless “ı”.
+- Pages 81, 82, and 84: No extraction correction required.
+- Full 85-page audit completed.
