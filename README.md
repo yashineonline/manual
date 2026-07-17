@@ -35,7 +35,7 @@ The full anchor-based record of all 181 applied typographical and elementary Eng
 See [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md). Public content stays in the `content` folder and is compiled into the offline PWA whenever a commit is deployed.
 
 
-## Allah’s 99 Beautiful Names
+## 99 Beautiful Names
 
 The swipeable one-name-at-a-time reader is loaded from:
 
