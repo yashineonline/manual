@@ -76,8 +76,19 @@ function localeFromPath(path: string): LocaleCode {
 }
 
 function parseYamlArray<T>(raw: string): T[] {
-  const value = loadYaml(raw)
-  return Array.isArray(value) ? value as T[] : []
+  const text = raw.trim()
+
+  if (!text) {
+    return []
+  }
+
+  try {
+    const value = loadYaml(text)
+    return Array.isArray(value) ? value as T[] : []
+  } catch (error) {
+    console.error('Invalid YAML content:', error)
+    return []
+  }
 }
 
 export const tocByLocale = new Map<LocaleCode, ManualTocEntry[]>()
