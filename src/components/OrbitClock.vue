@@ -3,6 +3,12 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { quranicOpeningsById } from '../data/quranicOpenings'
 import { useOrbitClock } from '../composables/useOrbitClock'
 
+const props = defineProps<{
+  gregorianDate: string
+  islamicDate: string
+}>()
+
+  
 const {
   settings,
   activeSequence,
@@ -26,8 +32,19 @@ onBeforeUnmount(() => {
   }
 })
 
+  +function readPart(
++  parts: Intl.DateTimeFormatPart[],
++  type: Intl.DateTimeFormatPartTypes
++): string {
++  return (
++    parts.find((item) => item.type === type)?.value ??
++    ''
++  )
++}
+
+  
 const zonedParts = computed(() => {
-  const parts = new Intl.DateTimeFormat('en-US', {
+  const twelveHourParts = new Intl.DateTimeFormat('en-US', {
     timeZone: activeTimezone.value,
     hour: 'numeric',
     minute: '2-digit',
@@ -35,16 +52,35 @@ const zonedParts = computed(() => {
     hour12: true
   }).formatToParts(now.value)
 
-  const part = (type: Intl.DateTimeFormatPartTypes) =>
-    parts.find((item) => item.type === type)?.value ?? ''
+  const twentyFourHourParts =
++    new Intl.DateTimeFormat('en-GB', {
++      timeZone: activeTimezone.value,
++      hour: '2-digit',
++      minute: '2-digit',
++      second: '2-digit',
++      hourCycle: 'h23'
++    }).formatToParts(now.value)
 
-  const hour12 = Number(part('hour')) || 12
-  const minute = Number(part('minute')) || 0
-  const second = Number(part('second')) || 0
-  const dayPeriod = part('dayPeriod').toLowerCase()
++  const hour12 =
++    Number(readPart(twelveHourParts, 'hour')) || 12
++
++  const hour24 =
++    Number(readPart(twentyFourHourParts, 'hour')) || 0
++
++  const minute =
++    Number(readPart(twelveHourParts, 'minute')) || 0
++
++  const second =
++    Number(readPart(twelveHourParts, 'second')) || 0
++
++  const dayPeriod = readPart(
++    twelveHourParts,
++    'dayPeriod'
++  ).toLowerCase()
 
   return {
     hour12,
+    hour24,
     minute,
     second,
     dayPeriod
@@ -52,8 +88,19 @@ const zonedParts = computed(() => {
 })
 
 const timeDisplay = computed(() => {
-  const { hour12, minute, dayPeriod } = zonedParts.value
-  return `${hour12} : ${String(minute).padStart(2, '0')} ${dayPeriod}`
+  const { hour12, hour24, minute, dayPeriod } = zonedParts.value
+
+  const paddedMinute =
++    String(minute).padStart(2, '0')
++
++  if (settings.value.mode === 'none') {
++    return (
++      `${String(hour24).padStart(2, '0')}` +
++      ` : ${paddedMinute}`
++    )
++  }
++
++  return `${hour12} : ${paddedMinute} ${dayPeriod}`
 })
 
 /*
@@ -119,6 +166,11 @@ const hourAngle = computed(() => {
   return (hour12 % 12) * 30 + minute * 0.5
 })
 
++const orbitRingStyle = computed(() => ({
++  '--orbit-duration':
++    `${settings.value.rotationSeconds}s`
++}))
+
 function positionStyle(index: number) {
   return {
     '--orbit-angle': `${index * 30}deg`
@@ -128,11 +180,18 @@ function positionStyle(index: number) {
 
 <template>
   <section class="date-orbit orbit-clock" aria-label="AQRT orbit clock">
-    <!-- Keep the existing 24-division ring -->
-    <div class="orbit-rings" aria-hidden="true" />
-
-    <!-- Twelve configurable combination positions -->
-    <div class="orbit-combinations" aria-hidden="true">
+    <div
++      class="orbit-rings"
++      :class="`orbit-${settings.rotationMode}`"
++      :style="orbitRingStyle"
++      aria-hidden="true"
++    />
++
++    <div
++      v-if="settings.mode !== 'none'"
++      class="orbit-combinations"
++      aria-hidden="true"
++    >   
       <span
         v-for="(openingId, index) in activeSequence"
         :key="`${index}-${openingId}`"
@@ -165,25 +224,37 @@ function positionStyle(index: number) {
         {{ timeDisplay }}
       </time>
 
-      <p v-if="combinationDisplay" class="orbit-current-combinations">
+      <p
++        v-if="
++          settings.mode !== 'none' &&
++          combinationDisplay
++        "
++        class="orbit-current-combinations"
++      >
         {{ combinationDisplay }}
       </p>
 
-      <p v-else class="orbit-current-combinations orbit-none-message">
-        Choose combinations in Clock settings
+      <div class="date-divider" />
++
++      <p class="orbit-date">
++        {{ props.gregorianDate }}      
       </p>
-
       <div class="date-divider" />
 
-      <!--
-        KEEP your existing Gregorian and Islamic date lines here.
-
-        Move the same date markup that is currently inside .date-core
-        into this position without changing its text or data bindings.
-      -->
+      <p class="orbit-date">
++        {{ props.islamicDate }}
++      </p>
     </div>
 
     <div class="orbit-mode-switch" aria-label="Clock arrangement">
+      <button
+         type="button"
++        :class="{ active: settings.mode === 'none' }"
++        @click="setMode('none')"
++      >
++        None
++      </button>
+      
       <button
         type="button"
         :class="{ active: settings.mode === 'preset1' }"
