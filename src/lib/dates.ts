@@ -3,7 +3,7 @@ import type { CalendarEvent, DiyanetCalendar } from './types'
 
 export function localIsoDate(date = new Date()): string {
   const year = date.getFullYear()
-  const month = String(date.getMonth()  1).padStart(2, '0')
+  const month = String(date.getMonth() + 1).padStart(2, '0')
   const day = String(date.getDate()).padStart(2, '0')
   return `${year}-${month}-${day}`
 }
@@ -45,7 +45,7 @@ export function dateInTimeZone(
     )
     return date
   }
-
+}
 
 
 
@@ -88,12 +88,18 @@ const monthAliases: Record<string, string> = {
 }
 
 export function normalizeHijriMonth(value: string): string {
-  const key = value.toLocaleLowerCase('tr-TR').replace(/[’'._]/g, '').replace(/\s/g, ' ').trim()
+  const key = value
+  .toLocaleLowerCase('tr-TR')
+  .replace(/[’'._]/g, '')
+  .replace(/\s+/g, ' ')
+  .trim()
   return monthAliases[key] || key.replace(/\s|-/g, '')
 }
 
 export function parseDiyanetDate(value: string): { day: number; month: string; year: number } | null {
-  const match = value.trim().match(/^(\d{1,2})\s(.?)\s(\d{3,4})$/)
+  const match = value
+  .trim()
+  .match(/^(\d{1,2})\s+(.+?)\s+(\d{3,4})$/)
   if (!match) return null
   return { day: Number(match[1]), month: normalizeHijriMonth(match[2]), year: Number(match[3]) }
 }
@@ -125,8 +131,8 @@ export function localEventTime(event: CalendarEvent, today = new Date()): string
 
 export function deterministicIndex(length: number, date = new Date(), salt = 0): number {
   if (length <= 0) return -1
-  const key = Number(`${date.getFullYear()}${String(date.getMonth()  1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`)
-  return Math.abs(key  salt) % length
+  const key = Number(`${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`)
+  return Math.abs(key + salt) % length
 }
 
 
