@@ -32,15 +32,15 @@ onBeforeUnmount(() => {
   }
 })
 
-  +function readPart(
-+  parts: Intl.DateTimeFormatPart[],
-+  type: Intl.DateTimeFormatPartTypes
-+): string {
-+  return (
-+    parts.find((item) => item.type === type)?.value ??
-+    ''
-+  )
-+}
+  function readPart(
+  parts: Intl.DateTimeFormatPart[],
+  type: Intl.DateTimeFormatPartTypes
+): string {
+  return (
+    parts.find((item) => item.type === type)?.value ??
+    ''
+  )
+}
 
   
 const zonedParts = computed(() => {
@@ -53,30 +53,30 @@ const zonedParts = computed(() => {
   }).formatToParts(now.value)
 
   const twentyFourHourParts =
-+    new Intl.DateTimeFormat('en-GB', {
-+      timeZone: activeTimezone.value,
-+      hour: '2-digit',
-+      minute: '2-digit',
-+      second: '2-digit',
-+      hourCycle: 'h23'
-+    }).formatToParts(now.value)
+    new Intl.DateTimeFormat('en-GB', {
+      timeZone: activeTimezone.value,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hourCycle: 'h23'
+    }).formatToParts(now.value)
 
-+  const hour12 =
-+    Number(readPart(twelveHourParts, 'hour')) || 12
-+
-+  const hour24 =
-+    Number(readPart(twentyFourHourParts, 'hour')) || 0
-+
-+  const minute =
-+    Number(readPart(twelveHourParts, 'minute')) || 0
-+
-+  const second =
-+    Number(readPart(twelveHourParts, 'second')) || 0
-+
-+  const dayPeriod = readPart(
-+    twelveHourParts,
-+    'dayPeriod'
-+  ).toLowerCase()
+  const hour12 =
+    Number(readPart(twelveHourParts, 'hour')) || 12
+
+  const hour24 =
+    Number(readPart(twentyFourHourParts, 'hour')) || 0
+
+  const minute =
+    Number(readPart(twelveHourParts, 'minute')) || 0
+
+  const second =
+    Number(readPart(twelveHourParts, 'second')) || 0
+
+  const dayPeriod = readPart(
+    twelveHourParts,
+    'dayPeriod'
+  ).toLowerCase()
 
   return {
     hour12,
@@ -91,16 +91,16 @@ const timeDisplay = computed(() => {
   const { hour12, hour24, minute, dayPeriod } = zonedParts.value
 
   const paddedMinute =
-+    String(minute).padStart(2, '0')
-+
-+  if (settings.value.mode === 'none') {
-+    return (
-+      `${String(hour24).padStart(2, '0')}` +
-+      ` : ${paddedMinute}`
-+    )
-+  }
-+
-+  return `${hour12} : ${paddedMinute} ${dayPeriod}`
+    String(minute).padStart(2, '0')
+
+  if (settings.value.mode === 'none') {
+    return (
+      `${String(hour24).padStart(2, '0')}` 
+      ` : ${paddedMinute}`
+    )
+  }
+
+  return `${hour12} : ${paddedMinute} ${dayPeriod}`
 })
 
 /*
@@ -158,18 +158,18 @@ const combinationDisplay = computed(() => {
 
 const minuteAngle = computed(() => {
   const { minute, second } = zonedParts.value
-  return minute * 6 + second * 0.1
+  return minute * 6  second * 0.1
 })
 
 const hourAngle = computed(() => {
   const { hour12, minute } = zonedParts.value
-  return (hour12 % 12) * 30 + minute * 0.5
+  return (hour12 % 12) * 30  minute * 0.5
 })
 
-+const orbitRingStyle = computed(() => ({
-+  '--orbit-duration':
-+    `${settings.value.rotationSeconds}s`
-+}))
+const orbitRingStyle = computed(() => ({
+  '--orbit-duration':
+    `${settings.value.rotationSeconds}s`
+}))
 
 function positionStyle(index: number) {
   return {
@@ -181,17 +181,17 @@ function positionStyle(index: number) {
 <template>
   <section class="date-orbit orbit-clock" aria-label="AQRT orbit clock">
     <div
-+      class="orbit-rings"
-+      :class="`orbit-${settings.rotationMode}`"
-+      :style="orbitRingStyle"
-+      aria-hidden="true"
-+    />
-+
-+    <div
-+      v-if="settings.mode !== 'none'"
-+      class="orbit-combinations"
-+      aria-hidden="true"
-+    >   
+      class="orbit-rings"
+      :class="`orbit-${settings.rotationMode}`"
+      :style="orbitRingStyle"
+      aria-hidden="true"
+    />
+
+    <div
+      v-if="settings.mode !== 'none'"
+      class="orbit-combinations"
+      aria-hidden="true"
+    >   
       <span
         v-for="(openingId, index) in activeSequence"
         :key="`${index}-${openingId}`"
@@ -225,35 +225,35 @@ function positionStyle(index: number) {
       </time>
 
       <p
-+        v-if="
-+          settings.mode !== 'none' &&
-+          combinationDisplay
-+        "
-+        class="orbit-current-combinations"
-+      >
+        v-if="
+          settings.mode !== 'none' &&
+          combinationDisplay
+        "
+        class="orbit-current-combinations"
+      >
         {{ combinationDisplay }}
       </p>
 
       <div class="date-divider" />
-+
-+      <p class="orbit-date">
-+        {{ props.gregorianDate }}      
+
+      <p class="orbit-date">
+        {{ props.gregorianDate }}      
       </p>
       <div class="date-divider" />
 
       <p class="orbit-date">
-+        {{ props.islamicDate }}
-+      </p>
+        {{ props.islamicDate }}
+      </p>
     </div>
 
     <div class="orbit-mode-switch" aria-label="Clock arrangement">
       <button
          type="button"
-+        :class="{ active: settings.mode === 'none' }"
-+        @click="setMode('none')"
-+      >
-+        None
-+      </button>
+        :class="{ active: settings.mode === 'none' }"
+        @click="setMode('none')"
+      >
+        None
+      </button>
       
       <button
         type="button"
