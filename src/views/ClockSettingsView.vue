@@ -7,7 +7,9 @@ import {
 } from '../data/quranicOpenings'
 import {
   useOrbitClock,
+  type EditableOrbitSequence,
   type OrbitMode,
+  type OrbitRotationMode,
   type OrbitTimezoneMode
 } from '../composables/useOrbitClock'
 
@@ -17,11 +19,11 @@ const {
   setMode,
   setTimezoneMode,
   setOtherTimezone,
+  setRotationMode,
+  setRotationSeconds,
   setSequencePosition,
   resetSequence
 } = useOrbitClock()
-
-type EditableSequence = 'preset1' | 'preset2' | 'custom'
 
 const positions = [
   '12 o’clock',
@@ -36,6 +38,12 @@ const positions = [
   '9 o’clock',
   '10 o’clock',
   '11 o’clock'
+]
+
+const editableSequences: EditableOrbitSequence[] = [
+  'preset1',
+  'preset2',
+  'custom'
 ]
 
 const timezoneOptions = computed(() => {
@@ -73,8 +81,24 @@ function updateTimezoneMode(event: Event) {
   )
 }
 
+function updateRotationMode(event: Event) {
+  setRotationMode(
+    (event.target as HTMLSelectElement)
+      .value as OrbitRotationMode
+  )
+}
+
+function updateRotationSeconds(event: Event) {
+  setRotationSeconds(
+    Number(
+      (event.target as HTMLInputElement).value
+    )
+   )
+ }
+
+
 function updateOpening(
-  sequence: EditableSequence,
+  sequence: EditableOrbitSequence,
   position: number,
   event: Event
 ) {
@@ -88,6 +112,14 @@ function updateOpening(
 function selectedSuras(id: QuranicOpeningId) {
   return quranicOpeningsById.get(id)?.suras.join(', ') || ''
 }
+
+function sequenceTitle(
+  sequence: EditableOrbitSequence
+) {
+  if (sequence === 'preset1') return 'Preset 1'
+  if (sequence === 'preset2') return 'Preset 2'
+  return 'Custom'
+ }  
 </script>
 
 <template>
@@ -107,6 +139,8 @@ function selectedSuras(id: QuranicOpeningId) {
       <p>
         At 4 : 15 pm, the clock displays the combination at position 4,
         followed by the combination at position 3.
+        None hides the Arabic combinations and
+        displays the time in 24-hour format.
       </p>
     </div>
 
@@ -116,6 +150,7 @@ function selectedSuras(id: QuranicOpeningId) {
       <label class="clock-settings-field">
         <span>Arrangement</span>
         <select :value="settings.mode" @change="updateMode">
+          <option value="none">None</option>
           <option value="preset1">Preset 1</option>
           <option value="preset2">Preset 2</option>
           <option value="custom">Custom</option>
@@ -160,25 +195,66 @@ function selectedSuras(id: QuranicOpeningId) {
       </label>
     </section>
 
+        <section class="clock-settings-card">
+      <h2>Circle movement</h2>
+
+      <label class="clock-settings-field">
+        <span>Direction</span>
+        <select
+          :value="settings.rotationMode"
+          @change="updateRotationMode"
+        >
+          <option value="static">Static</option>
+          <option value="clockwise">
+            Clockwise
+          </option>
+          <option value="counterclockwise">
+            Anticlockwise
+          </option>
+        </select>
+      </label>
+
+      <label
+        v-if="settings.rotationMode !== 'static'"
+        class="clock-settings-field"
+      >
+        <span>Seconds per full turn</span>
+
+        <div class="clock-speed-control">
+          <input
+            type="range"
+            min="10"
+            max="180"
+            step="5"
+            :value="settings.rotationSeconds"
+            @input="updateRotationSeconds"
+          />
+
+          <input
+            type="number"
+            min="10"
+            max="180"
+            step="5"
+            :value="settings.rotationSeconds"
+            @change="updateRotationSeconds"
+          />
+        </div>
+
+        <small class="clock-setting-help">
+          {{ settings.rotationSeconds }} seconds.
+          A lower number turns faster.
+        </small>
+      </label>
+    </section>
+    
+
     <section
-      v-for="sequenceName in ([
-        'preset1',
-        'preset2',
-        'custom'
-      ] as EditableSequence[])"
+      v-for="sequenceName in editableSequences"
       :key="sequenceName"
       class="clock-settings-card"
     >
       <div class="clock-settings-card-heading">
-        <h2>
-          {{
-            sequenceName === 'preset1'
-              ? 'Preset 1'
-              : sequenceName === 'preset2'
-                ? 'Preset 2'
-                : 'Custom'
-          }}
-        </h2>
+        <h2>{{ sequenceTitle(sequenceName) }}</h2>
 
         <button
           type="button"
