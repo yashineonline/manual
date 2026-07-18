@@ -1,0 +1,511 @@
+# Logical reading structure for the existing 85 extracted page files.
+# Body wording remains in content/en/manual/pages/001.txt ... 085.txt.
+# This file adds only navigation titles, grouping, and anchor metadata.
+
+- id: "about-this-manual"
+  title: "About This Manual"
+  pages: [1, 1]
+  subcontents:
+    - id: "title-and-publication"
+      title: "Title and Publication Information"
+      page: 1
+
+- id: "statement-from-shaykh-taner"
+  title: "Statement From Shaykh Taner"
+  pages: [2, 2]
+  subcontents:
+    - id: "statement"
+      title: "Statement From Shaykh Taner"
+      page: 2
+
+- id: "sufism-an-introduction"
+  title: "Sufism: An Introduction"
+  pages: [3, 5]
+  subcontents:
+    - id: "what-is-sufism"
+      title: "What Is Sufism?"
+      page: 3
+    - id: "sufism-is-action"
+      title: "Sufism Is Action"
+      page: 3
+      anchor: "Back in Turkey, Sufism is action."
+    - id: "the-purpose-of-the-shaykh"
+      title: "The Purpose of the Shaykh"
+      page: 3
+      anchor: "Sufism is a way of life."
+    - id: "the-spiritual-being-and-material-body"
+      title: "The Spiritual Being and the Material Body"
+      page: 3
+      anchor: "Here is the situation from a different angle."
+    - id: "relationship-with-allah"
+      title: "Relationship With Allah"
+      page: 4
+      anchor: "Your number one priority should be Allah."
+    - id: "the-nafs-and-the-purpose-of-creation"
+      title: "The Nafs and the Purpose of Creation"
+      page: 4
+      anchor: "Allah created the entire universe."
+    - id: "the-fisherman-in-the-storm"
+      title: "The Fisherman in the Storm"
+      page: 5
+      anchor: "Assume you are in a ship."
+    - id: "praise-in-ease-and-hardship"
+      title: "Praise in Ease and Hardship"
+      page: 5
+      anchor: "Why can’t we praise Allah all the time?"
+
+- id: "origins-of-sufism"
+  title: "Origins of Sufism"
+  pages: [5, 5]
+  subcontents:
+    - id: "adam-and-the-earlier-traditions"
+      title: "Adam and the Earlier Traditions"
+      page: 5
+      anchor: "Origins of Sufism"
+    - id: "the-miraj-and-the-umma"
+      title: "The Mi'raj and the Umma"
+      page: 5
+      anchor: "He carried the tradition with Muhammed"
+    - id: "hz-ali-and-hz-abu-bakr"
+      title: "Hz. Ali and Hz. Abu Bakr"
+      page: 5
+      anchor: "Then Hz. Ali"
+    - id: "ahl-al-suffa-and-the-rope-of-allah"
+      title: "Ahl al Suffa and the Rope of Allah"
+      page: 5
+      anchor: "The word ‘Sufi’ came from the homeless people"
+
+- id: "history-of-the-qadiri-rifai-order"
+  title: "The History of the Qadiri Rifa'i Order"
+  pages: [6, 7]
+  subcontents:
+    - id: "the-spiritual-fathers"
+      title: "The Spiritual Fathers of the Order"
+      page: 6
+      anchor: "The Spiritual Fathers of the Qadiri Rifa’i Sufi Order"
+    - id: "the-lineage-and-related-orders"
+      title: "The Lineage and Related Orders"
+      page: 6
+      anchor: "The Tariqa has strong ties"
+    - id: "history-of-the-dergah"
+      title: "History of the Dergah in Istanbul"
+      page: 6
+      anchor: "History of the Dergah in Istanbul"
+    - id: "shaykh-muhammed-ansari-and-the-tekke"
+      title: "Shaykh Muhammed Ansari and the Tekke"
+      page: 6
+      anchor: "Shaykh Muhammed Ansari, who was born in Baghdad"
+    - id: "the-soldier-and-the-sultan"
+      title: "The Soldier and the Sultan"
+      page: 6
+      anchor: "Sometime after arriving in Istanbul"
+    - id: "succession-at-the-ayni-ali-baba-tekke"
+      title: "Succession at the Ayn'i Ali Baba Tekke"
+      page: 7
+      anchor: "Shaykh Muhammed Ansari headed"
+    - id: "the-tariqati-ansariya"
+      title: "The Tariqati Ansariya"
+      page: 7
+      anchor: "In May 1993"
+
+- id: "abdul-qadir-geylani"
+  title: "A Biography of Abdul Qadir Geylani"
+  pages: [7, 13]
+  subcontents:
+    - id: "birth-life-and-passing"
+      title: "Birth, Life and Passing"
+      page: 7
+      anchor: "Abdul Qadir Geylani is to the left"
+    - id: "the-golden-chain"
+      title: "The Golden Chain"
+      page: 7
+      anchor: "His father was Seyyid Musa Jangi Dost"
+    - id: "titles-and-the-grey-hawk"
+      title: "Titles and the Grey Hawk"
+      page: 8
+      anchor: "Abdul Qadir Geylani is accepted as one of the four qutbs"
+    - id: "education-and-retreat"
+      title: "Education and Retreat"
+      page: 8
+      anchor: "He received his first education"
+    - id: "reputation-character-and-teaching"
+      title: "Reputation, Character and Teaching"
+      page: 8
+      anchor: "During Geylani’s lifetime"
+    - id: "the-dream-before-his-birth"
+      title: "The Dream Before His Birth"
+      page: 8
+      anchor: "Before Abdul Qadir’s birth"
+    - id: "fasting-as-an-infant"
+      title: "Fasting as an Infant"
+      page: 8
+      anchor: "When Hz. Abdul Qadir was born"
+    - id: "the-forty-gold-pieces"
+      title: "The Forty Gold Pieces"
+      page: 8
+      anchor: "Young Geylani was burning with love of learning."
+    - id: "twenty-five-years-in-baghdad"
+      title: "Twenty-Five Years in Baghdad"
+      page: 9
+      anchor: "Hz. Abdul Qadir Geylani spent twenty-five years"
+    - id: "moments-and-teachings"
+      title: "Moments From His Life and Teachings"
+      page: 10
+    - id: "miracles-and-service"
+      title: "Miracles and Service"
+      page: 11
+    - id: "later-accounts"
+      title: "Later Accounts"
+      page: 12
+    - id: "bahauddin-naqshband"
+      title: "Bahauddin Naqshband"
+      page: 12
+      anchor: "One day Hz. Abdul Qadir said"
+
+- id: "ahmed-er-rifai"
+  title: "A Biography of Ahmed er Rifa'i"
+  pages: [13, 15]
+  subcontents:
+    - id: "birth-lineage-and-teachers"
+      title: "Birth, Lineage and Teachers"
+      page: 13
+      anchor: "Ahmed Er Rifa’i is to the right"
+    - id: "education-character-and-service"
+      title: "Education, Character and Service"
+      page: 13
+    - id: "the-prophets-hand-and-healing"
+      title: "The Prophet's Hand and the Gift of Healing"
+      page: 14
+    - id: "love-is-fire"
+      title: "Love Is Fire"
+      page: 14
+      anchor: "One day somebody asked Abdul Qadir Geylani"
+    - id: "the-healing-of-the-child"
+      title: "The Healing of the Child"
+      page: 14
+      anchor: "Ebu Musa el-Haddadi said"
+    - id: "the-cat-and-the-robe"
+      title: "The Cat and the Robe"
+      page: 14
+      anchor: "One Friday, Hz. Rifa’i was sleeping"
+    - id: "virtues-and-legacy"
+      title: "Virtues and Legacy"
+      page: 15
+
+- id: "thirty-two-fardz"
+  title: "32 Fardz"
+  pages: [15, 17]
+  subcontents:
+    - id: "overview"
+      title: "Overview"
+      page: 15
+      anchor: "32 Fardz"
+    - id: "six-fardz-of-faith"
+      title: "Six Fardz of Faith"
+      page: 15
+      anchor: "Six Fardz"
+    - id: "five-pillars-of-islam"
+      title: "Five Pillars of Islam"
+      page: 15
+      anchor: "Five Pillars"
+    - id: "four-fardz-of-wudu"
+      title: "Four Fardz of Wudu"
+      page: 16
+      anchor: "Four Fardz"
+    - id: "three-fardz-of-ghusul"
+      title: "Three Fardz of Ghusul"
+      page: 16
+      anchor: "Three Fardz"
+    - id: "two-fardz-of-tayammum"
+      title: "Two Fardz of Tayammum"
+      page: 16
+      anchor: "Two Fardz"
+    - id: "twelve-fardz-of-salat"
+      title: "Twelve Fardz of Salat"
+      page: 16
+      anchor: "Twelve Fardz"
+
+- id: "levels-of-nafs"
+  title: "Levels of Nafs"
+  pages: [17, 21]
+  subcontents:
+    - id: "introduction-to-the-seven-levels"
+      title: "Introduction to the Seven Levels"
+      page: 17
+      anchor: "Levels of Nafs"
+    - id: "nafs-i-ammara"
+      title: "Nafs-i Ammara"
+      page: 17
+      anchor: "Nafs-i-Ammara"
+    - id: "nafs-i-lawwama"
+      title: "Nafs-i Lawwama"
+      page: 18
+      anchor: "Nafs-i-Lawwama"
+    - id: "nafs-i-mulhama"
+      title: "Nafs-i Mulhama"
+      page: 18
+      anchor: "Nafs-i-Mulhama"
+    - id: "nafs-i-mutmaina"
+      title: "Nafs-i Mutma'ina"
+      page: 19
+      anchor: "Nafs-i-Mutmaina"
+    - id: "nafs-i-radziyya"
+      title: "Nafs-i Radziyya"
+      page: 19
+      anchor: "Nafs-i-Radziyya"
+    - id: "nafs-i-mardziyya"
+      title: "Nafs-i Mardziyya"
+      page: 20
+      anchor: "Nafs-i-Mardhiyeh"
+    - id: "nafs-i-safiyya"
+      title: "Nafs-i Safiyya"
+      page: 21
+      anchor: "Nafs-i-Kamile or Nafs-i-Safiye"
+
+- id: "maqam-of-arifs"
+  title: "Maqam of Arifs"
+  pages: [21, 25]
+  subcontents:
+    - id: "the-maqam-of-arifs"
+      title: "The Maqam of Arifs"
+      page: 21
+    - id: "stages-of-the-seeker"
+      title: "Stages of the Seeker"
+      page: 22
+    - id: "degrees-of-relationship"
+      title: "Degrees of Relationship"
+      page: 23
+    - id: "names-maqams-and-correspondences"
+      title: "Names, Maqams and Correspondences"
+      page: 24
+
+- id: "crown-of-prophet-muhammed"
+  title: "The Crown of Prophet Muhammed"
+  pages: [25, 25]
+  subcontents:
+    - id: "the-crown-and-its-symbolism"
+      title: "The Crown and Its Symbolism"
+      page: 25
+
+- id: "personal-and-group-zikr"
+  title: "Understanding Personal and Group Zikr"
+  pages: [26, 31]
+  subcontents:
+    - id: "understanding-zikr"
+      title: "Understanding Zikr"
+      page: 26
+    - id: "personal-zikr"
+      title: "Personal Zikr"
+      page: 27
+    - id: "group-zikr"
+      title: "Group Zikr"
+      page: 28
+    - id: "preparation-and-opening"
+      title: "Preparation and Opening"
+      page: 29
+    - id: "the-body-of-the-zikr"
+      title: "The Body of the Zikr"
+      page: 30
+    - id: "closing-contemplation-and-questions"
+      title: "Closing, Contemplation and Questions"
+      page: 31
+
+- id: "congregational-zikr-script"
+  title: "Qadiri Rifa'i Congregational Zikr Script"
+  pages: [31, 38]
+  subcontents:
+    - id: "opening"
+      title: "Opening"
+      page: 31
+    - id: "opening-recitation"
+      title: "Opening Recitation"
+      page: 32
+    - id: "main-zikr-sequence"
+      title: "Main Zikr Sequence"
+      page: 33
+    - id: "names-and-songs"
+      title: "Names and Songs"
+      page: 34
+    - id: "continued-zikr"
+      title: "Continued Zikr"
+      page: 35
+    - id: "dua-and-dedications"
+      title: "Du'a and Dedications"
+      page: 36
+    - id: "closing"
+      title: "Closing"
+      page: 37
+
+- id: "understanding-salat"
+  title: "Understanding Salat"
+  pages: [38, 40]
+  subcontents:
+    - id: "meaning-and-purpose-of-salat"
+      title: "Meaning and Purpose of Salat"
+      page: 38
+      anchor: "Understanding Salat"
+    - id: "requirements-times-and-exemptions"
+      title: "Requirements, Times and Exemptions"
+      page: 39
+    - id: "one-rakat"
+      title: "One Rakat"
+      page: 39
+      anchor: "The following example will explain one rakat"
+
+- id: "congregational-salat"
+  title: "Congregational Salat"
+  pages: [40, 45]
+  subcontents:
+    - id: "preparing-for-congregational-salat"
+      title: "Preparing for Congregational Salat"
+      page: 40
+    - id: "positions-and-movements"
+      title: "Positions and Movements"
+      page: 41
+    - id: "recitations"
+      title: "Recitations"
+      page: 42
+    - id: "transliteration"
+      title: "Transliteration"
+      page: 43
+    - id: "english-meaning"
+      title: "English Meaning"
+      page: 44
+
+- id: "adab-of-dua"
+  title: "Adab of Du'a"
+  pages: [45, 46]
+  subcontents:
+    - id: "adab-of-dua"
+      title: "Adab of Du'a"
+      page: 45
+
+- id: "silsillah"
+  title: "Silsillah of the Qadiri Rifa'i Tariqa"
+  pages: [46, 51]
+  subcontents:
+    - id: "introduction-to-the-silsillah"
+      title: "Introduction to the Silsillah"
+      page: 46
+    - id: "qadiri-lineage"
+      title: "Qadiri Lineage"
+      page: 47
+    - id: "rifai-lineage"
+      title: "Rifa'i Lineage"
+      page: 48
+    - id: "connected-lineages"
+      title: "Connected Lineages"
+      page: 49
+    - id: "continuation-of-the-lineage"
+      title: "Continuation of the Lineage"
+      page: 50
+
+- id: "adab-on-the-path"
+  title: "Adab: Courtesies Practiced on the Path"
+  pages: [51, 60]
+  subcontents:
+    - id: "general-adab"
+      title: "General Adab"
+      page: 51
+    - id: "adab-with-the-shaykh"
+      title: "Adab With the Shaykh"
+      page: 52
+    - id: "adab-in-the-learning-circle"
+      title: "Adab in the Learning Circle"
+      page: 53
+    - id: "receiving-and-visiting"
+      title: "Receiving Visitors and Visiting Others"
+      page: 54
+    - id: "adab-of-eating"
+      title: "Adab of Eating"
+      page: 55
+    - id: "adab-of-travel"
+      title: "Adab of Travel"
+      page: 56
+    - id: "conflict-and-conduct"
+      title: "Conflict and Conduct"
+      page: 57
+    - id: "household-and-community"
+      title: "Household and Community"
+      page: 58
+    - id: "responsibilities-of-the-murshid"
+      title: "Responsibilities of the Murshid"
+      page: 59
+
+- id: "allahs-99-beautiful-names"
+  title: "Allah's 99 Beautiful Names"
+  pages: [60, 75]
+  route: "/names"
+  subcontents:
+    - id: "names-1-to-25"
+      title: "Names 1–25"
+      page: 60
+    - id: "names-26-to-50"
+      title: "Names 26–50"
+      page: 65
+    - id: "names-51-to-75"
+      title: "Names 51–75"
+      page: 69
+    - id: "names-76-to-99"
+      title: "Names 76–99"
+      page: 72
+
+- id: "glossary-of-sufi-terminology"
+  title: "Glossary of Sufi Terminology"
+  pages: [75, 81]
+  route: "/glossary"
+  subcontents:
+    - id: "glossary"
+      title: "Glossary"
+      page: 75
+
+- id: "for-new-students"
+  title: "For New Students"
+  pages: [81, 83]
+  subcontents:
+    - id: "beginning-the-path"
+      title: "Beginning the Path"
+      page: 81
+    - id: "expectations-and-practice"
+      title: "Expectations and Practice"
+      page: 82
+    - id: "questions-for-new-students"
+      title: "Questions for New Students"
+      page: 83
+
+- id: "tithing-to-the-tariqat"
+  title: "Tithing to the Tariqat"
+  pages: [83, 84]
+  subcontents:
+    - id: "tithing"
+      title: "Tithing to the Tariqat"
+      page: 83
+
+- id: "suggested-readings"
+  title: "Suggested Readings"
+  pages: [84, 85]
+  subcontents:
+    - id: "books-by-shaykh-taner"
+      title: "Books by Shaykh Taner"
+      page: 84
+      anchor: "Books by your Shaykh"
+    - id: "primary-religious-and-sufi-texts"
+      title: "Primary Religious and Sufi Texts"
+      page: 84
+      anchor: "Bukhari’s collection of Hadith Qudsi"
+    - id: "general-spiritual-topics-and-biographies"
+      title: "General Spiritual Topics and Biographies"
+      page: 84
+      anchor: "General Spiritual Topics and Biographies"
+
+- id: "turkish-pronunciation-guide"
+  title: "Turkish Pronunciation Guide"
+  pages: [85, 85]
+  subcontents:
+    - id: "consonants"
+      title: "Consonants"
+      page: 85
+    - id: "vowels"
+      title: "Vowels"
+      page: 85
+      anchor: "Vowels"
