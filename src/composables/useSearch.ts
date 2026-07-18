@@ -24,14 +24,18 @@ function buildDocuments(): SearchDocument[] {
   }))
 
   for (const entry of weeklyEntries) {
-    docs.push({
-      id: `weekly-${entry.locale}-${entry.week}-${entry.kind}`,
-      title: `${entry.week} · ${entry.kind}`,
-      body: stripMarkdown(entry.raw),
-      type: 'Weekly',
-      route: `/weekly/${entry.kind}`,
-      meta: entry.locale
-    })
+    for (const kind of ['reading', 'contemplation', 'assignment'] as const) {
+      const section = entry.sections[kind]
+  
+      docs.push({
+        id: `weekly-${entry.locale}-${entry.week}-${kind}`,
+        title: `${entry.title} · ${kind}`,
+        body: stripMarkdown(section.raw),
+        type: 'Weekly',
+        route: `/weekly/${entry.week}/${kind}`,
+        meta: entry.locale
+      })
+    }
   }
 
   for (const video of videos) {
