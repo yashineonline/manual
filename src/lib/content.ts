@@ -15,6 +15,7 @@ import type {
   QuranVerseFile,
   QuranVerse,
   VideoEntry,
+  WeeklyFile,
   WeeklyEntry,
   WeeklyKind
 } from './types'
@@ -61,7 +62,7 @@ const videoModules = import.meta.glob('../../content/*/videos/*.txt', {
   import: 'default'
 }) as Record<string, string>
 
-const weeklyModules = import.meta.glob('../../content/*/weekly/*.md', {
+const weeklyModules = import.meta.glob('../../content/*/weekly/*.yml', {
   eager: true,
   query: '?raw',
   import: 'default'
@@ -248,18 +249,45 @@ for (const [path, raw] of Object.entries(videoModules)) {
 }
 
 export const weeklyEntries: WeeklyEntry[] = []
+
 for (const [path, raw] of Object.entries(weeklyModules)) {
-  const match = path.match(/content\/(en|fr|de|es)\/weekly\/(\d{4}-W\d{2})-(summary|assignment|contemplation)\.md$/)
-  if (!match) continue
+  const locale = localeFromPath(path)
+  const parsed = loadYaml(raw) as Partial<WeeklyFile> | undefined
+  const week = String(parsed?.week || '').trim()
+  const starts = String(parsed?.starts || '').trim()
+  const title = String(parsed?.title || week).trim()
+
+  if (!week) continue
+
+  const reading = String(parsed?.reading || '').trim()
+  const contemplation = String(parsed?.contemplation || '').trim()
+  const assignment = String(parsed?.assignment || '').trim()
+
   weeklyEntries.push({
-    locale: match[1] as LocaleCode,
-    week: match[2],
-    kind: match[3] as WeeklyKind,
-    raw,
-    html: renderMarkdown(raw)
+    locale,
+    week,
+    starts,
+    title,
+    published: parsed?.published !== false,
+    sections: {
+      reading: {
+        raw: reading,
+        html: renderMarkdown(reading)
+      },
+      contemplation: {
+        raw: contemplation,
+        html: renderMarkdown(contemplation)
+      },
+      assignment: {
+        raw: assignment,
+        html: renderMarkdown(assignment)
+      }
+    }
   })
 }
+
 weeklyEntries.sort((a, b) => b.week.localeCompare(a.week))
+
 
 export const activities: ActivityEntry[] = []
 for (const raw of Object.values(activityModules)) {
