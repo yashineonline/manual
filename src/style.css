@@ -137,13 +137,33 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .orbit-rings { position: absolute; width: min(88%, 520px); aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(213,170,88,.42); background:
   radial-gradient(circle, transparent 0 23%, rgba(213,170,88,.18) 23.2% 23.8%, transparent 24% 41%, rgba(213,170,88,.14) 41.2% 41.8%, transparent 42%),
   repeating-conic-gradient(from 0deg, rgba(213,170,88,.23) 0deg 1deg, transparent 1deg 15deg);
-  animation: orbit 55s linear infinite;
+  +  animation: orbit var(--orbit-duration, 55s) linear infinite;
 }
 @keyframes orbit { to { transform: rotate(360deg); } }
+
++
++.orbit-rings.orbit-static {
++  animation: none;
++  transform: rotate(0deg);
++}
++
++.orbit-rings.orbit-clockwise {
++  animation-direction: normal;
++}
++
++.orbit-rings.orbit-counterclockwise {
++  animation-direction: reverse;
++}
+
+
 .date-core { position: relative; z-index: 2; width: min(72%, 350px); aspect-ratio: 1; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 44px; text-align: center; background: rgba(23,59,54,.92); border: 1px solid rgba(213,170,88,.55); box-shadow: 0 0 0 12px rgba(23,59,54,.72); }
-.date-core time:first-of-type { font-family: Georgia, serif; font-size: clamp(1.55rem, 3vw, 2.7rem); line-height: 1.15; }
-.date-core time:last-of-type { font-size: 1.04rem; font-weight: 750; letter-spacing: .04em; }
-.date-core small { color: rgba(247,241,229,.55); text-transform: uppercase; letter-spacing: .16em; font-size: .6rem; }
++.date-core small {
++  color: rgba(247,241,229,.55);
++  text-transform: uppercase;
++  letter-spacing: .16em;
++  font-size: .6rem;
++}
+
 .date-divider { width: 68px; height: 1px; background: var(--gold-bright); }
 .illuminated-panel { position: relative; min-height: 275px; padding: clamp(30px, 4vw, 58px); border-radius: 28px 28px 90px 28px; border: 1px solid var(--line); background: rgba(247,241,229,.86); box-shadow: var(--shadow); overflow: hidden; }
 .illuminated-panel::after { content:""; position:absolute; width: 150px; height:150px; right:-72px; bottom:-72px; border: 1px solid rgba(185,135,53,.5); border-radius:50%; box-shadow: 0 0 0 18px rgba(185,135,53,.08), 0 0 0 36px rgba(185,135,53,.05); }
@@ -264,8 +284,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
 .orbit-clock-core {
   z-index: 4;
-  width: min(58%, 330px);
+  +  width: min(62%, 350px);
   gap: 10px;
+  +  padding: 34px;
 }
 
 .orbit-time {
@@ -277,8 +298,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .orbit-current-combinations {
-  max-width: 250px;
-  min-height: 3em;
+  max-width: 265px;
   margin: 2px 0 0;
   color: var(--gold-bright);
   font-size: clamp(0.7rem, 1.2vw, 0.94rem);
@@ -288,9 +308,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   text-wrap: balance;
 }
 
-.orbit-none-message {
-  color: rgba(247, 241, 229, 0.52);
-  font-weight: 600;
++.orbit-date {
++  max-width: 270px;
++  margin: 0;
++  color: rgba(247, 241, 229, 0.82);
++  font-family: Georgia, "Times New Roman", serif;
++  font-size: clamp(0.78rem, 1.25vw, 1rem);
++  font-weight: 700;
++  line-height: 1.28;
++  letter-spacing: 0.025em;
++  text-align: center;
++  text-wrap: balance;
 }
 
 .orbit-mode-switch {
@@ -299,6 +327,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   left: 50%;
   bottom: 26px;
   display: flex;
+  +  max-width: calc(100% - 30px);
   gap: 4px;
   padding: 4px;
   border: 1px solid rgba(213, 170, 88, 0.28);
@@ -808,6 +837,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   margin: 0 auto;
 }
 
+
+
 .clock-settings-intro {
   margin-bottom: 18px;
   padding: 18px 20px;
@@ -879,6 +910,32 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--ink);
   background: var(--paper);
 }
+
+}
++
++.clock-speed-control {
++  display: grid;
++  grid-template-columns: minmax(0, 1fr) 96px;
++  align-items: center;
++  gap: 12px;
++}
++
++.clock-speed-control input[type="range"] {
++  min-height: auto;
++  padding: 0;
++  accent-color: var(--gold);
++}
++
++.clock-speed-control input[type="number"] {
++  text-align: center;
++}
++
++.clock-setting-help {
++  color: var(--ink-soft);
++  font-size: 0.72rem;
++  line-height: 1.4;
+}
+
 
 .orbit-position-editor {
   display: grid;
@@ -1043,17 +1100,23 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .orbit-clock-core {
-    width: min(61%, 260px);
-    padding-inline: 24px;
+    +    width: min(68%, 292px);
++    gap: 8px;
++    padding: 24px 20px;
   }
 
   .orbit-current-combinations {
-    max-width: 190px;
+    max-width: 205px;
     font-size: 0.68rem;
   }
 
+  +  .orbit-date {
++    max-width: 215px;
++    font-size: 0.72rem;
++  }
+
   .orbit-mode-switch {
-    bottom: 17px;
+    bottom: 13px;
   }
 
   .orbit-mode-switch button {
@@ -1064,6 +1127,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .orbit-position-editor {
     grid-template-columns: 1fr;
   }
+
+  +  .clock-speed-control {
+     grid-template-columns: 1fr;
+   }
 
   .clock-settings-card-heading {
     align-items: flex-start;
