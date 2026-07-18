@@ -920,8 +920,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   background: var(--paper);
 }
 
-}
-
 .clock-speed-control {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 96px;
