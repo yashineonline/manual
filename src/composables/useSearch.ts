@@ -64,10 +64,10 @@ function buildDocuments(): SearchDocument[] {
   }))
 
   for (const [locale, quotes] of quotesByLocale.entries()) {
-    quotes.forEach((quote, position) => docs.push({
-      id: `quote-${locale}-${position}`,
-      title: 'Quote',
-      body: quote,
+    quotes.forEach((quote) => docs.push({
+      id: `quote-${quote.id}`,
+      title: quote.author,
+      body: quote.text,
       type: 'Home',
       route: '/',
       meta: locale
@@ -88,7 +88,7 @@ function buildDocuments(): SearchDocument[] {
   for (const [locale, verses] of quranByLocale.entries()) {
     verses.forEach((verse) => docs.push({
       id: `quran-${locale}-${verse.id}`,
-      title: verse.reference,
+      title: `${verse.sura}:${verse.verse}`,
       body: verse.text,
       type: 'Quran',
       route: '/',
