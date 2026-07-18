@@ -7,6 +7,7 @@ import GlossaryView from '../views/GlossaryView.vue'
 import VideosView from '../views/VideosView.vue'
 import WeeklyHubView from '../views/WeeklyHubView.vue'
 import WeeklyContentView from '../views/WeeklyContentView.vue'
+import WeeklyArchiveView from '../views/WeeklyArchiveView.vue'
 import ActivitiesView from '../views/ActivitiesView.vue'
 import TeacherView from '../views/TeacherView.vue'
 import ContactView from '../views/ContactView.vue'
@@ -30,11 +31,23 @@ export const router = createRouter({
     { path: '/glossary', name: 'glossary', component: GlossaryView },
     { path: '/videos', name: 'videos', component: VideosView },
     { path: '/weekly', name: 'weekly', component: WeeklyHubView },
+
     {
-      path: '/weekly/:kind(summary|assignment|contemplation)',
-      name: 'weekly-content',
+      path: '/weekly/:kind(reading|contemplation|assignment)',
+      name: 'weekly-current-content',
       component: WeeklyContentView
     },
+    {
+      path: '/weekly/archive',
+      name: 'weekly-archive',
+      component: WeeklyArchiveView
+    },
+    {
+      path: '/weekly/:week(\\d{4}-W\\d{2})/:kind(reading|contemplation|assignment)',
+      name: 'weekly-archived-content',
+      component: WeeklyContentView
+    },
+    
     { path: '/activities', name: 'activities', component: ActivitiesView },
     { path: '/teacher', name: 'teacher', component: TeacherView },
     { path: '/contact', name: 'contact', component: ContactView },
