@@ -20,16 +20,30 @@ const {
   eventTitle
 } = useHomeClockData()
 
+const TEST_QUOTES_EVERY_MINUTE = false
+
 const quote = computed(() => {
   const list = quotesByLocale.get(activeLocale.value) || []
-  const index = dailyCycleIndex(
+  if (list.length === 0) {
+    return null
+  }
+
+  const index = TEST_QUOTES_EVERY_MINUTE
+    ? Math.floor(now.value.getTime() / 60_000) % list.length
+    : dailyCycleIndex(
     list.length,
     now.value,
     selectedTimeZone.value,
     `quote:${activeLocale.value}`
   )
 
-  return index >= 0 ? list[index] : null
+  console.info(
+    `Loaded ${list.length} quotes:`,
+    list.map((entry) => entry.id)
+  )
+
+  return list[index] || null
+
 })
 
 const verse = computed(() => {

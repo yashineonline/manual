@@ -5,11 +5,11 @@
 # - start, startTime, timezone and url are optional.
 
 # Gregorian event
-- id: "urs-muhyiddin"
-  enabled: true
-  title: "Urs of Shaykh Muhyiddin Ansari"
-  calendar: "gregorian"
-  date: "2026-01-09"
+# - id: "urs-muhyiddin"
+#   enabled: true
+#   title: "Urs of Shaykh Muhyiddin Ansari"
+#   calendar: "gregorian"
+#   date: "2026-01-09"
 #  startTime: "19:00"
 #  timezone: "America/New_York"
 #  url: ""
@@ -33,4 +33,4 @@
     Urs of 
     Shaykh Muhyiddin Ansari
   calendar: "gregorian"
-  date: "2026-07-19"
+  date: "2026-01-09"
