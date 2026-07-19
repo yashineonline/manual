@@ -203,27 +203,27 @@
     - id: "six-fardz-of-faith"
       title: "Six Fardz of Faith"
       page: 15
-      anchor: "Six Fardz"
+      anchor: "I. Conditions of Iman (Belief)"
     - id: "five-pillars-of-islam"
       title: "Five Pillars of Islam"
       page: 15
-      anchor: "Five Pillars"
+      anchor: "II. Conditions or Pillars of Islam"
     - id: "four-fardz-of-wudu"
       title: "Four Fardz of Wudu"
       page: 16
-      anchor: "Four Fardz"
+      anchor: "III. Wudu (Ablutions)"
     - id: "three-fardz-of-ghusul"
       title: "Three Fardz of Ghusul"
       page: 16
-      anchor: "Three Fardz"
+      anchor: "IV. Ghusl (Shower)"
     - id: "two-fardz-of-tayammum"
       title: "Two Fardz of Tayammum"
       page: 16
-      anchor: "Two Fardz"
+      anchor: "V. Teyemmum"
     - id: "twelve-fardz-of-salat"
       title: "Twelve Fardz of Salat"
       page: 16
-      anchor: "Twelve Fardz"
+      anchor: "VI. Salat (Formal Prayer)"
 
 - id: "levels-of-nafs"
   title: "Levels of Nafs"
@@ -240,7 +240,7 @@
     - id: "nafs-i-lawwama"
       title: "Nafs-i Lawwama"
       page: 18
-      anchor: "Nafs-i-Lawwama"
+      anchor: "Nafs-i-Lawama (second level)"
     - id: "nafs-i-mulhama"
       title: "Nafs-i Mulhama"
       page: 18
@@ -252,7 +252,7 @@
     - id: "nafs-i-radziyya"
       title: "Nafs-i Radziyya"
       page: 19
-      anchor: "Nafs-i-Radziyya"
+      anchor: "Nafs-i-Radhiyyeh (fifth level)"
     - id: "nafs-i-mardziyya"
       title: "Nafs-i Mardziyya"
       page: 20
@@ -338,18 +338,19 @@
 
 - id: "understanding-salat"
   title: "Understanding Salat"
-  pages: [38, 40]
+  pages: [37, 40]
   subcontents:
     - id: "meaning-and-purpose-of-salat"
       title: "Meaning and Purpose of Salat"
-      page: 38
+      page: 37
       anchor: "Understanding Salat"
     - id: "requirements-times-and-exemptions"
       title: "Requirements, Times and Exemptions"
-      page: 39
+      page: 37
+      anchor: "There are twelve salat requirements."
     - id: "one-rakat"
       title: "One Rakat"
-      page: 39
+      page: 37
       anchor: "The following example will explain one rakat"
 
 - id: "congregational-salat"

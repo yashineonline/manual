@@ -14,36 +14,6 @@ export interface ManualPage {
   title: string
 }
 
-export interface ManualSectionDefinition {
-  id: string
-  title: string
-  sourcePages: number[]
-  start: string
-  end: string
-}
-
-export interface ManualChapterDefinition {
-  id: string
-  title: string
-  printedPage: string
-  sections: ManualSectionDefinition[]
-}
-
-export interface ManualSection {
-  id: string
-  chapterId: string
-  chapterTitle: string
-  title: string
-  sourcePages: number[]
-  text: string
-}
-
-export interface ManualSectionsFile {
-  chapters: ManualChapterDefinition[]
-}
-
-
-
 export interface DivineName {
   number: number
   arabic: string
@@ -129,11 +99,13 @@ export interface ActivityEntry {
   week: string
   title: string
   url: string
+  enabled?: boolean
 }
 
 export interface CalendarEvent {
   id: string
   title: string
+  enabled?: boolean
   calendar: 'gregorian' | 'diyanet'
   date?: string
   start?: string

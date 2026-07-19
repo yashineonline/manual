@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npm run content:validate && vue-tsc -b && vite build",
     "preview": "vite preview",
-    "content:validate": "node scripts/validate-content.mjs",
+    "content:validate": "node scripts/validate-content.mjs && node scripts/validate-manual-chapters.mjs --strict",
     "calendar:update": "node scripts/update-diyanet-calendar.mjs"
   },
   "dependencies": {

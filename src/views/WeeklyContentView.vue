@@ -23,7 +23,9 @@ const entry = computed(() => {
   )
 
   if (requestedWeek.value) {
-    return published.find((item) => item.week === requestedWeek.value)
+    return published.find(
+      (item) => item.week === requestedWeek.value
+    )
   }
 
   return published[0]
@@ -40,10 +42,22 @@ const title = computed(() => kindTitle[kind.value] || 'Weekly')
         <span v-if="entry" class="eyebrow">{{ entry.title }}</span>
         <h1>{{ title }}</h1>
       </div>
-      <RouterLink class="outline-action" to="/weekly/archive">Archive</RouterLink>
+
+      <div class="heading-actions">
+        <RouterLink class="outline-action" to="/weekly">
+          ← Weekly
+        </RouterLink>
+        <RouterLink class="outline-action" to="/weekly/archive">
+          Archive
+        </RouterLink>
+      </div>
     </header>
 
-    <article v-if="section" class="markdown-sheet" v-html="section.html"></article>
+    <article
+      v-if="section"
+      class="markdown-sheet"
+      v-html="section.html"
+    />
     <p v-else>No published entry is available for this section.</p>
   </section>
 </template>

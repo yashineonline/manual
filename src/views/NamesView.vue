@@ -154,12 +154,18 @@ syncFromRoute()
     </header>
 
     <section v-if="nameOfDay" class="name-of-day" aria-label="Name of the Day">
-      <span class="eyebrow">Name of the Day</span>
-      <h2>{{ nameOfDay.transliteration }}</h2>
-      <p>{{ nameOfDayMeaning }}</p>
-      <button type="button" disabled>
-        View where this name occurs in The Quran (coming soon)
-      </button>
+      <div class="name-of-day-copy">
+        <span class="eyebrow">Name of the Day</span>
+        <h2>{{ nameOfDay.transliteration }}</h2>
+        <p>{{ nameOfDayMeaning }}</p>
+        <button type="button" disabled>
+          View where this name occurs in The Quran (coming soon)
+        </button>
+      </div>
+
+      <div class="name-of-day-arabic" dir="rtl" lang="ar">
+        {{ nameOfDay.arabic }}
+      </div>
     </section>
 
     <div

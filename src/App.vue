@@ -4,10 +4,12 @@ import { RouterView, useRoute } from 'vue-router'
 import AppShell from './components/AppShell.vue'
 
 const route = useRoute()
-const printMode = computed(() => route.meta.print === true)
+const standaloneMode = computed(() =>
+  route.meta.print === true || route.meta.standalone === true
+)
 </script>
 
 <template>
-  <RouterView v-if="printMode" />
+  <RouterView v-if="standaloneMode" />
   <AppShell v-else />
 </template>

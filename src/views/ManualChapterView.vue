@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, watch } from 'vue'
+import {
+  computed,
+  nextTick,
+  onMounted,
+  watch
+} from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
+import GlossaryText from '../components/GlossaryText.vue'
 import {
   buildManualChapter,
   manualChapterDefinitions,
@@ -47,6 +53,12 @@ async function scrollToRequestedSection() {
     return
   }
 
+  await new Promise<void>((resolve) => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => resolve())
+    })
+  })
+
   document
     .getElementById(sectionElementId(sectionId))
     ?.scrollIntoView({
@@ -63,7 +75,8 @@ watch(
   () => [route.params.chapterId, route.params.sectionId],
   () => {
     void scrollToRequestedSection()
-  }
+  },
+  { flush: 'post' }
 )
 </script>
 
@@ -80,6 +93,9 @@ watch(
         v-for="section in chapter.blocks"
         :key="section.id"
         :to="manualSectionRoute(chapter.id, section.id)"
+        :class="{
+          active: route.params.sectionId === section.id
+        }"
       >
         {{ section.title }}
       </RouterLink>
@@ -106,11 +122,9 @@ watch(
           <h2>{{ section.title }}</h2>
         </header>
 
-        <!--
-          When the GLS popup system is active, replace this div with:
+        <div class="manual-logical-text">
           <GlossaryText :text="section.body" />
-        -->
-        <div class="manual-logical-text">{{ section.body }}</div>
+        </div>
       </section>
 
       <nav class="manual-logical-pager" aria-label="Chapter navigation">

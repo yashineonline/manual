@@ -1,18 +1,34 @@
+# EVENT AUTHORING RULES
+# - enabled is optional. Omitted means true. Use enabled: false to hide an entry.
+# - Gregorian events default to America/New_York unless timezone is supplied.
+# - Diyanet events default to Europe/Istanbul unless timezone is supplied.
+# - start, startTime, timezone and url are optional.
+
 # Gregorian event
 - id: "urs-muhyiddin"
+  enabled: true
   title: "Urs of Shaykh Muhyiddin Ansari"
   calendar: "gregorian"
   date: "2026-01-09"
-#   start: "2026-01-09T19:00:00"
-#   timezone: "America/New_York"
-#   url: ""
-#
-# Diyanet Islamic calendar event
+#  startTime: "19:00"
+#  timezone: "America/New_York"
+#  url: ""
+
+# Diyanet Islamic-calendar event
 - id: "mawlid"
+  enabled: true
   title: "Mawlid"
   calendar: "diyanet"
   hijriDay: 12
   hijriMonth: "Rebiülevvel"
 #  startTime: "19:00"
-# timezone: "America/New_York"
-#   url: ""
+#  timezone: "Europe/Istanbul"
+#  url: ""
+
+# TEMPORARY HOME-CLOCK TEST
+# Set date to today in the event timezone, deploy, then remove or disable it.
+- id: "clock-event-test"
+  enabled: true
+  title: "Test Event"
+  calendar: "gregorian"
+  date: "2026-07-19"

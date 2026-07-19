@@ -6,6 +6,18 @@ import { load as loadYaml } from 'js-yaml'
 const root = process.cwd()
 const errors = []
 
+function loadOptionalYaml(filePath) {
+  const raw = fs.readFileSync(filePath, 'utf8')
+  const text = raw
+    .split(/\r?\n/)
+    .filter((line) => !line.trim().startsWith('#'))
+    .join('\n')
+    .trim()
+
+  return text ? loadYaml(text) : null
+}
+
+
 const pagesDir = path.join(root, 'content/en/manual/pages')
 const pages = fs.readdirSync(pagesDir).filter((name) => /^\d{3}\.txt$/.test(name)).sort()
 if (pages.length !== 85) errors.push(`Expected 85 English manual page files; found ${pages.length}.`)
@@ -108,8 +120,8 @@ for (const locale of ['en', 'fr', 'de', 'es']) {
       }
       const url = parts.slice(1).join('|').trim()
       if (!/youtu(?:\.be|be\.com)/i.test(url)) errors.push(`${locale}/${file}:${index + 1}: URL is not a YouTube link.`)
-      if (!/[?&](?:start|t)=/i.test(url)) errors.push(`${locale}/${file}:${index + 1}: YouTube link has no start time.`)
-      if (!/[?&]end=/i.test(url)) errors.push(`${locale}/${file}:${index + 1}: YouTube link has no end time.`)
+      if (!/[?&](?:start|t)=/i.test(url)) console.warn(`[content warning] ${locale}/${file}:${index + 1}: YouTube link has no start time; the full video will open.`)
+      if (!/[?&]end=/i.test(url)) console.warn(`[content warning] ${locale}/${file}:${index + 1}: YouTube link has no end time; playback will continue to the end.`)
     })
   }
 }
@@ -134,6 +146,88 @@ if (fs.existsSync(weeklyDir)) {
 }
 
 
+const obsoleteSectionsFile = path.join(
+  root,
+  'content/en/manual/sections.yml'
+)
+if (fs.existsSync(obsoleteSectionsFile)) {
+  errors.push(
+    'Remove obsolete content/en/manual/sections.yml; chapters.yml is the single logical-manual manifest.'
+  )
+}
+
+const eventsDir = path.join(root, 'content/events')
+const eventIds = new Set()
+if (fs.existsSync(eventsDir)) {
+  for (const file of fs.readdirSync(eventsDir).filter((name) => name.endsWith('.yml'))) {
+    const parsed = loadOptionalYaml(path.join(eventsDir, file))
+    const entries = Array.isArray(parsed) ? parsed : []
+
+    for (const entry of entries) {
+      const id = String(entry?.id || '').trim()
+      const title = String(entry?.title || '').trim()
+      const calendar = String(entry?.calendar || '').trim()
+
+      if (!id) errors.push(`${file}: an event has no id.`)
+      if (eventIds.has(id)) errors.push(`${file}: duplicate event id ${id}.`)
+      eventIds.add(id)
+
+      if (!title) errors.push(`${file}: ${id || '(no id)'} has no title.`)
+      if (entry?.enabled !== undefined && typeof entry.enabled !== 'boolean') {
+        errors.push(`${file}: ${id || '(no id)'} enabled must be true or false.`)
+      }
+
+      if (!['gregorian', 'diyanet'].includes(calendar)) {
+        errors.push(`${file}: ${id || '(no id)'} calendar must be gregorian or diyanet.`)
+      }
+
+      if (calendar === 'gregorian') {
+        const date = String(entry?.date || '').trim()
+        const start = String(entry?.start || '').trim()
+        if (!date && !start) {
+          errors.push(`${file}: ${id || '(no id)'} needs date or start.`)
+        }
+        if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+          errors.push(`${file}: ${id || '(no id)'} date must be YYYY-MM-DD.`)
+        }
+      }
+
+      if (calendar === 'diyanet') {
+        const day = Number(entry?.hijriDay)
+        if (!Number.isInteger(day) || day < 1 || day > 30) {
+          errors.push(`${file}: ${id || '(no id)'} hijriDay must be 1-30.`)
+        }
+        if (!String(entry?.hijriMonth || '').trim()) {
+          errors.push(`${file}: ${id || '(no id)'} has no hijriMonth.`)
+        }
+      }
+
+      const startTime = String(entry?.startTime || '').trim()
+      if (startTime && !/^([01]\d|2[0-3]):[0-5]\d$/.test(startTime)) {
+        errors.push(`${file}: ${id || '(no id)'} startTime must be HH:MM.`)
+      }
+    }
+  }
+}
+
+for (const locale of ['en', 'fr', 'de', 'es']) {
+  const activitiesDir = path.join(root, `content/${locale}/activities`)
+  if (!fs.existsSync(activitiesDir)) continue
+
+  for (const file of fs.readdirSync(activitiesDir).filter((name) => name.endsWith('.yml'))) {
+    const parsed = loadOptionalYaml(path.join(activitiesDir, file))
+    const entries = Array.isArray(parsed) ? parsed : []
+
+    for (const entry of entries) {
+      if (!String(entry?.week || '').trim()) errors.push(`${locale}/${file}: an activity has no week.`)
+      if (!String(entry?.title || '').trim()) errors.push(`${locale}/${file}: an activity has no title.`)
+      if (!String(entry?.url || '').trim()) errors.push(`${locale}/${file}: an activity has no url.`)
+      if (entry?.enabled !== undefined && typeof entry.enabled !== 'boolean') {
+        errors.push(`${locale}/${file}: activity enabled must be true or false.`)
+      }
+    }
+  }
+}
 
 if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join('\n'))

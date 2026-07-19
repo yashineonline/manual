@@ -17,6 +17,9 @@ const entries = computed(() => weeklyEntries.filter((entry) =>
         <span class="eyebrow">AQRT Manual</span>
         <h1>Weekly Archive</h1>
       </div>
+      <RouterLink class="outline-action" to="/weekly">
+        ← Weekly
+      </RouterLink>
     </header>
 
     <div class="weekly-archive-grid">

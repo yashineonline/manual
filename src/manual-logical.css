@@ -186,7 +186,8 @@
 }
 
 .manual-logical-toc a:hover,
-.manual-logical-toc a.router-link-active {
+.manual-logical-toc a.router-link-active,
+.manual-logical-toc a.active {
   color: var(--ink);
   background: color-mix(in srgb, var(--gold) 11%, transparent);
 }

@@ -1,31 +1,24 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, ref } from 'vue'
+import { computed } from 'vue'
 import { useLocale } from '../composables/useLocale'
+import { useHomeClockData } from '../composables/useHomeClockData'
 import {
-  diyanetCalendar,
-  events,
   quranByLocale,
   quranTranslatorByLocale,
   quotesByLocale
 } from '../lib/content'
-import { dateInTimeZone, eventOccursToday, formatGregorian, getDiyanetDate, localEventTime } from '../lib/dates'
 import { dailyCycleIndex } from '../lib/daily'
-import { useTimeZone } from '../composables/useTimeZone'
 import OrbitClock from '../components/OrbitClock.vue'
 
-  
 const { activeLocale } = useLocale()
-const { selectedTimeZone } = useTimeZone()
-const now = ref(new Date())
-const timer = window.setInterval(() => { now.value = new Date() }, 60_000) 
-onBeforeUnmount(() => window.clearInterval(timer))
-
-  const selectedCalendarDate = computed(() =>
-  dateInTimeZone(
-    now.value,
-    selectedTimeZone.value
-  )
-)
+const {
+  now,
+  selectedTimeZone,
+  gregorianDay,
+  gregorianDate,
+  islamicDate,
+  eventTitle
+} = useHomeClockData()
 
 const quote = computed(() => {
   const list = quotesByLocale.get(activeLocale.value) || []
@@ -56,54 +49,38 @@ const quranTranslator = computed(() =>
   quranTranslatorByLocale.get('en') ||
   ''
 )
-
-
-const gregorian = computed(() => formatGregorian(selectedCalendarDate.value))
-const diyanet = computed(() => getDiyanetDate(diyanetCalendar, selectedCalendarDate.value))
-const todayEvents = computed(() => events
-  .filter((entry) => eventOccursToday(entry, diyanet.value.value, selectedCalendarDate.value))
-  .map((entry) => ({ ...entry, localTime: localEventTime(entry, selectedCalendarDate.value) })))
-const localZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 </script>
 
 <template>
   <div class="home-page">
     <OrbitClock
-      :gregorian-date="gregorian"
-      :islamic-date="diyanet.value"
+      :gregorian-day="gregorianDay"
+      :gregorian-date="gregorianDate"
+      :islamic-date="islamicDate"
+      :event-title="eventTitle"
     />
 
-    <section v-if="quote" class="illuminated-panel quote-panel">
+    <section
+      v-if="quote"
+      class="illuminated-panel quote-panel"
+    >
       <span class="panel-number">01</span>
       <blockquote>{{ quote.text }}</blockquote>
       <cite class="quote-author">{{ quote.author }}</cite>
     </section>
 
-    <section v-if="verse" class="illuminated-panel verse-panel">
+    <section
+      v-if="verse"
+      class="illuminated-panel verse-panel"
+    >
       <span class="panel-number">02</span>
       <blockquote>{{ verse.text }}</blockquote>
       <cite class="verse-source">
         <strong>{{ verse.sura }}:{{ verse.verse }}</strong>
-        <span v-if="quranTranslator">Translated by {{ quranTranslator }}</span>
+        <span v-if="quranTranslator">
+          Translated by {{ quranTranslator }}
+        </span>
       </cite>
-    </section>
-
-    <section v-if="todayEvents.length" class="event-band">
-      <header>
-        <span>Events</span>
-        <small>{{ localZone }}</small>
-      </header>
-      <a
-        v-for="event in todayEvents"
-        :key="event.id"
-        class="event-entry"
-        :href="event.url || undefined"
-        :target="event.url ? '_blank' : undefined"
-        :rel="event.url ? 'noreferrer' : undefined"
-      >
-        <strong>{{ event.title }}</strong>
-        <span v-if="event.localTime">{{ event.localTime }}</span>
-      </a>
     </section>
   </div>
 </template>

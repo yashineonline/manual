@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import {
   quranicOpenings,
   quranicOpeningsById,
@@ -8,17 +7,31 @@ import {
 import {
   useOrbitClock,
   type EditableOrbitSequence,
+  type OrbitCenterDisplay,
+  type OrbitLabelMode,
   type OrbitMode,
   type OrbitRotationMode,
   type OrbitTimezoneMode
 } from '../composables/useOrbitClock'
+import {
+  formatTimeZoneLabel,
+  supportedTimeZones,
+  type ClockTimeFormat
+} from '../lib/timezones'
 
 const {
   settings,
   localTimezone,
+  maxSecondaryTimezones,
   setMode,
+  setCenterDisplay,
+  setOrbitLabelMode,
   setTimezoneMode,
   setOtherTimezone,
+  setSecondaryTimeFormat,
+  addSecondaryTimezone,
+  updateSecondaryTimezone,
+  removeSecondaryTimezone,
   setRotationMode,
   setRotationSeconds,
   setSequencePosition,
@@ -46,56 +59,42 @@ const editableSequences: EditableOrbitSequence[] = [
   'custom'
 ]
 
-const timezoneOptions = computed(() => {
-  const intl = Intl as typeof Intl & {
-    supportedValuesOf?: (key: 'timeZone') => string[]
-  }
+const timezoneOptions = supportedTimeZones()
+const localTimezoneLabel = formatTimeZoneLabel(localTimezone)
 
-  if (typeof intl.supportedValuesOf === 'function') {
-    return intl.supportedValuesOf('timeZone')
-  }
-
-  return [
-    'America/New_York',
-    'America/Toronto',
-    'Europe/London',
-    'Europe/Paris',
-    'Europe/Istanbul',
-    'Indian/Mauritius',
-    'Asia/Dubai',
-    'Asia/Karachi',
-    'Asia/Kolkata',
-    'Asia/Kuala_Lumpur',
-    'Asia/Tokyo',
-    'Australia/Sydney'
-  ]
-})
+function readSelect(event: Event): string {
+  return (event.target as HTMLSelectElement).value
+}
 
 function updateMode(event: Event) {
-  setMode((event.target as HTMLSelectElement).value as OrbitMode)
+  setMode(readSelect(event) as OrbitMode)
+}
+
+function updateCenterDisplay(event: Event) {
+  setCenterDisplay(readSelect(event) as OrbitCenterDisplay)
+}
+
+function updateOrbitLabelMode(event: Event) {
+  setOrbitLabelMode(readSelect(event) as OrbitLabelMode)
 }
 
 function updateTimezoneMode(event: Event) {
-  setTimezoneMode(
-    (event.target as HTMLSelectElement).value as OrbitTimezoneMode
-  )
+  setTimezoneMode(readSelect(event) as OrbitTimezoneMode)
+}
+
+function updateSecondaryTimeFormat(event: Event) {
+  setSecondaryTimeFormat(readSelect(event) as ClockTimeFormat)
 }
 
 function updateRotationMode(event: Event) {
-  setRotationMode(
-    (event.target as HTMLSelectElement)
-      .value as OrbitRotationMode
-  )
+  setRotationMode(readSelect(event) as OrbitRotationMode)
 }
 
 function updateRotationSeconds(event: Event) {
   setRotationSeconds(
-    Number(
-      (event.target as HTMLInputElement).value
-    )
-   )
- }
-
+    Number((event.target as HTMLInputElement).value)
+  )
+}
 
 function updateOpening(
   sequence: EditableOrbitSequence,
@@ -105,7 +104,7 @@ function updateOpening(
   setSequencePosition(
     sequence,
     position,
-    (event.target as HTMLSelectElement).value as QuranicOpeningId
+    readSelect(event) as QuranicOpeningId
   )
 }
 
@@ -113,13 +112,11 @@ function selectedSuras(id: QuranicOpeningId) {
   return quranicOpeningsById.get(id)?.suras.join(', ') || ''
 }
 
-function sequenceTitle(
-  sequence: EditableOrbitSequence
-) {
+function sequenceTitle(sequence: EditableOrbitSequence) {
   if (sequence === 'preset1') return 'Preset 1'
   if (sequence === 'preset2') return 'Preset 2'
   return 'Custom'
- }  
+}
 </script>
 
 <template>
@@ -129,26 +126,28 @@ function sequenceTitle(
         <span class="eyebrow">AQRT Manual</span>
         <h1>Clock settings</h1>
       </div>
+
+      <RouterLink class="outline-action" to="/clock-display">
+        Open full-screen clock
+      </RouterLink>
     </header>
 
     <div class="clock-settings-intro">
       <p>
-        Position 12 is the top of the orbit. The sequence then continues
-        clockwise through positions 1 to 11.
+        Position 12 is at the top. Positions 1–11 continue clockwise.
       </p>
       <p>
-        At 4 : 15 pm, the clock displays the combination at position 4,
-        followed by the combination at position 3.
-        None hides the Arabic combinations and
-        displays the time in 24-hour format.
+        At 5 : 20 pm, letter-time uses position 5 followed by
+        position 4. When both positions contain the same combination,
+        it is displayed once.
       </p>
     </div>
 
     <section class="clock-settings-card">
-      <h2>Active arrangement</h2>
+      <h2>Clock content</h2>
 
       <label class="clock-settings-field">
-        <span>Arrangement</span>
+        <span>Active arrangement</span>
         <select :value="settings.mode" @change="updateMode">
           <option value="none">None</option>
           <option value="preset1">Preset 1</option>
@@ -156,17 +155,49 @@ function sequenceTitle(
           <option value="custom">Custom</option>
         </select>
       </label>
+
+      <label class="clock-settings-field">
+        <span>Main display inside the clock</span>
+        <select
+          :value="settings.centerDisplay"
+          @change="updateCenterDisplay"
+        >
+          <option value="letters">Letter-time</option>
+          <option value="12h">Normal time — 12 hour</option>
+          <option value="24h">Normal time — 24 hour</option>
+        </select>
+        <small class="clock-setting-help">
+          If the active arrangement is None, Letter-time falls back to
+          24-hour time because no combinations are assigned.
+        </small>
+      </label>
+
+      <label class="clock-settings-field">
+        <span>Writing around the clock</span>
+        <select
+          :value="settings.orbitLabelMode"
+          @change="updateOrbitLabelMode"
+        >
+          <option value="arabic">Arabic — الم</option>
+          <option value="transliteration">
+            Transliteration — Alif Lam Mim
+          </option>
+        </select>
+      </label>
     </section>
 
     <section class="clock-settings-card">
-      <h2>Timezone</h2>
+      <h2>Primary timezone</h2>
 
       <label class="clock-settings-field">
-        <span>Time source</span>
-        <select :value="settings.timezoneMode" @change="updateTimezoneMode">
+        <span>Timezone used by the clock and daily content</span>
+        <select
+          :value="settings.timezoneMode"
+          @change="updateTimezoneMode"
+        >
           <option value="new-york">New York</option>
           <option value="local">
-            Local device time — {{ localTimezone }}
+            {{ localTimezoneLabel }} — {{ localTimezone }}
           </option>
           <option value="other">Another timezone</option>
         </select>
@@ -177,25 +208,104 @@ function sequenceTitle(
         class="clock-settings-field"
       >
         <span>Timezone</span>
-
         <input
           :value="settings.otherTimezone"
           list="aqrt-timezones"
           autocomplete="off"
-          @change="setOtherTimezone(($event.target as HTMLInputElement).value)"
+          @change="
+            setOtherTimezone(
+              ($event.target as HTMLInputElement).value
+            )
+          "
         />
-
-        <datalist id="aqrt-timezones">
-          <option
-            v-for="timezone in timezoneOptions"
-            :key="timezone"
-            :value="timezone"
-          />
-        </datalist>
       </label>
     </section>
 
-        <section class="clock-settings-card">
+    <section class="clock-settings-card">
+      <div class="clock-settings-card-heading">
+        <div>
+          <h2>Additional home-page timezones</h2>
+          <p class="clock-card-description">
+            Add up to three. They appear below the clock, one per line.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="outline-action"
+          :disabled="
+            settings.secondaryTimezones.length >=
+            maxSecondaryTimezones
+          "
+          @click="addSecondaryTimezone"
+        >
+          Add timezone
+        </button>
+      </div>
+
+      <label class="clock-settings-field">
+        <span>Time format for additional timezones</span>
+        <select
+          :value="settings.secondaryTimeFormat"
+          @change="updateSecondaryTimeFormat"
+        >
+          <option value="12h">12 hour</option>
+          <option value="24h">24 hour</option>
+        </select>
+      </label>
+
+      <div
+        v-if="settings.secondaryTimezones.length"
+        class="secondary-timezone-editor"
+      >
+        <article
+          v-for="(entry, index) in settings.secondaryTimezones"
+          :key="index"
+          class="secondary-timezone-row"
+        >
+          <label class="clock-settings-field">
+            <span>Label</span>
+            <input
+              :value="entry.label"
+              placeholder="e.g. Istanbul"
+              @change="
+                updateSecondaryTimezone(index, {
+                  label: ($event.target as HTMLInputElement).value
+                })
+              "
+            />
+          </label>
+
+          <label class="clock-settings-field">
+            <span>Timezone</span>
+            <input
+              :value="entry.timezone"
+              list="aqrt-timezones"
+              autocomplete="off"
+              @change="
+                updateSecondaryTimezone(index, {
+                  timezone: ($event.target as HTMLInputElement).value
+                })
+              "
+            />
+          </label>
+
+          <button
+            type="button"
+            class="outline-action secondary-timezone-remove"
+            @click="removeSecondaryTimezone(index)"
+          >
+            Remove
+          </button>
+        </article>
+      </div>
+
+      <p v-else class="clock-empty-setting">
+        No additional timezone is displayed on the home page.
+      </p>
+    </section>
+
+    <section class="clock-settings-card">
       <h2>Circle movement</h2>
 
       <label class="clock-settings-field">
@@ -205,12 +315,8 @@ function sequenceTitle(
           @change="updateRotationMode"
         >
           <option value="static">Static</option>
-          <option value="clockwise">
-            Clockwise
-          </option>
-          <option value="counterclockwise">
-            Anticlockwise
-          </option>
+          <option value="clockwise">Clockwise</option>
+          <option value="counterclockwise">Anticlockwise</option>
         </select>
       </label>
 
@@ -219,7 +325,6 @@ function sequenceTitle(
         class="clock-settings-field"
       >
         <span>Seconds per full turn</span>
-
         <div class="clock-speed-control">
           <input
             type="range"
@@ -229,7 +334,6 @@ function sequenceTitle(
             :value="settings.rotationSeconds"
             @input="updateRotationSeconds"
           />
-
           <input
             type="number"
             min="10"
@@ -239,14 +343,19 @@ function sequenceTitle(
             @change="updateRotationSeconds"
           />
         </div>
-
         <small class="clock-setting-help">
-          {{ settings.rotationSeconds }} seconds.
-          A lower number turns faster.
+          {{ settings.rotationSeconds }} seconds. Lower is faster.
         </small>
       </label>
     </section>
-    
+
+    <datalist id="aqrt-timezones">
+      <option
+        v-for="timezone in timezoneOptions"
+        :key="timezone"
+        :value="timezone"
+      />
+    </datalist>
 
     <section
       v-for="sequenceName in editableSequences"
@@ -255,7 +364,6 @@ function sequenceTitle(
     >
       <div class="clock-settings-card-heading">
         <h2>{{ sequenceTitle(sequenceName) }}</h2>
-
         <button
           type="button"
           class="outline-action"
@@ -294,8 +402,8 @@ function sequenceTitle(
 
           <small>
             {{
-              selectedSuras(settings[sequenceName][index])
-                || 'No combination at this position'
+              selectedSuras(settings[sequenceName][index]) ||
+              'No combination at this position'
             }}
           </small>
         </label>

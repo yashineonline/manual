@@ -1,3 +1,7 @@
+# Add one block per external activity.
+# enabled is optional. Omitted means true.
+#
 # - week: "2026-W29"
-#   title: ""
-#   url: ""
+#   title: "Activity title"
+#   url: "https://example.com"
+#   enabled: true
