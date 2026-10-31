@@ -80,12 +80,7 @@ function selectAll() {
     <section class="manual-logical-index page-enter">
     <header class="page-heading ornament-heading manual-logical-heading">
       <div>
-        <span class="eyebrow">AQRT Manual</span>
-        <h1>Manual</h1>
-        <p>
-          Read by chapter and subcontent while retaining the original
-          wording and source-page references.
-        </p>
+        <h1>AQRT Manual</h1>
       </div>
 
       <button
@@ -172,34 +167,5 @@ function selectAll() {
       </article>
     </div>
   </section>
-
-
-
-  
-  <section class="manual-index page-enter">
-    <header class="page-heading ornament-heading">
-      <div>
-        <span class="eyebrow">AQRT Manual</span>
-        <h1>Table of Contents</h1>
-      </div>
-      <div class="heading-actions">
-        <button class="outline-action" type="button" @click="selectAll">All</button>
-        <button class="gold-action" type="button" :disabled="!selectedPages.length" @click="openPdf">PDF</button>
-      </div>
-    </header>
-
-    <div class="toc-grid">
-      <article v-for="(entry, index) in toc" :key="entry.id" class="toc-card">
-        <label class="toc-check">
-          <input v-model="selectedIds" type="checkbox" :value="entry.id" />
-          <span aria-hidden="true"></span>
-        </label>
-        <RouterLink :to="routeFor(entry)" class="toc-link">
-          <span class="toc-ordinal">{{ String(index + 1).padStart(2, '0') }}</span>
-          <strong>{{ entry.title }}</strong>
-          <span class="toc-page">{{ entry.displayPage }}</span>
-        </RouterLink>
-      </article>
-    </div>
-  </section>
+ 
 </template>
