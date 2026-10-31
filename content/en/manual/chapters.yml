@@ -191,15 +191,10 @@
     - id: "virtues-and-legacy"
       title: "Virtues and Legacy"
       page: 15
-
 - id: "thirty-two-fardz"
   title: "32 Fardz"
   pages: [16, 17]
   subcontents:
-    - id: "overview"
-      title: "Overview"
-      page: 16
-      anchor: "32 Fardz"
     - id: "six-fardz-of-faith"
       title: "Six Fardz of Faith"
       page: 16
