@@ -194,19 +194,19 @@
 
 - id: "thirty-two-fardz"
   title: "32 Fardz"
-  pages: [15, 17]
+  pages: [16, 17]
   subcontents:
     - id: "overview"
       title: "Overview"
-      page: 15
+      page: 16
       anchor: "32 Fardz"
     - id: "six-fardz-of-faith"
       title: "Six Fardz of Faith"
-      page: 15
+      page: 16
       anchor: "I. Conditions of Iman (Belief)"
     - id: "five-pillars-of-islam"
       title: "Five Pillars of Islam"
-      page: 15
+      page: 16
       anchor: "II. Conditions or Pillars of Islam"
     - id: "four-fardz-of-wudu"
       title: "Four Fardz of Wudu"
