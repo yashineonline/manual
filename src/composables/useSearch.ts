@@ -1,5 +1,19 @@
 import MiniSearch from 'minisearch'
-import { activities, divineNamesByLocale, glossaryEntries, events, manualPages, quranByLocale, quotesByLocale, videos, weeklyEntries } from '../lib/content'
+import {
+  activities,
+  divineNamesByLocale,
+  glossaryEntries,
+  events,
+  quranByLocale,
+  quotesByLocale,
+  videos,
+  weeklyEntries
+} from '../lib/content'
+
+import {
+  manualLogicalChapters,
+  manualSectionRoute
+} from '../lib/manualChapters'
 import type { LocaleCode, SearchDocument } from '../lib/types'
 
 let documents: SearchDocument[] | null = null
@@ -14,15 +28,21 @@ function stripMarkdown(value: string): string {
 }
 
 function buildDocuments(): SearchDocument[] {
-  const docs: SearchDocument[] = manualPages.map((page) => ({
-    id: `manual-${page.locale}-${page.page}`,
-    title: `${page.title} · ${page.page}`,
-    body: page.text,
-    type: 'Manual',
-    route: `/manual/page/${page.page}`,
-    meta: page.locale
-  }))
-
+  const docs: SearchDocument[] = manualLogicalChapters.flatMap(
+    (chapter) =>
+      chapter.blocks
+        .filter((section) => section.body.trim().length > 0)
+        .map((section) => ({
+          id: `manual-en-${chapter.id}-${section.id}`,
+          title: `${chapter.title} · ${section.title}`,
+          body: section.body,
+          type: 'Manual',
+          route:
+            chapter.route ||
+            manualSectionRoute(chapter.id, section.id),
+          meta: 'en'
+        }))
+  )
   for (const entry of weeklyEntries) {
     for (const kind of ['reading', 'contemplation', 'assignment'] as const) {
       const section = entry.sections[kind]
