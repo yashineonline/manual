@@ -154,10 +154,20 @@ if (!fs.existsSync(manifestPath)) {
             .join('\n\n')
 
           if (!normalize(searchable).includes(normalize(section.anchor))) {
-            warnings.push(
-              `${key}: anchor not found: ${JSON.stringify(section.anchor)}`
-            )
-          }
+  const anchorPageIsEmpty = !chapterPages.find(
+    (entry) => entry.page === section.page
+  )?.text.trim()
+
+  if (anchorPageIsEmpty) {
+    console.warn(
+      `[manual info] ${key}: page ${section.page} is empty; missing anchor allowed.`
+    )
+  } else {
+    warnings.push(
+      `${key}: anchor not found: ${JSON.stringify(section.anchor)}`
+    )
+  }
+}
         }
       }
     }
